@@ -208,8 +208,12 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AttendeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+<!--<<<<<<< HEAD-->
+    <Compile Include="Controllers\StaffController.cs" />
+<!--=======-->
     <Compile Include="Controllers\ShowController.cs" />
     <Compile Include="Controllers\TicketController.cs" />
+<!-->>>>>>> a173a252236201cbef836b0f09854dfff4232f92-->
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
