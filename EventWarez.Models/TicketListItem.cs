@@ -14,5 +14,6 @@ namespace EventWarez.Models
         public int Price { get; set; }
         public TicketType TypeTicket { get; set; }
         public int TCount { get; set; }
+        public int? ShowId { get; set; }
     }
 }
