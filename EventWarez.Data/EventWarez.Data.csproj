@@ -86,6 +86,18 @@
   <ItemGroup>
     <Compile Include="Attendee.cs" />
     <Compile Include="IdentityModels.cs" />
+
+    <Compile Include="Migrations\202106081357525_InitialMigration.cs" />
+    <Compile Include="Migrations\202106081357525_InitialMigration.Designer.cs">
+      <DependentUpon>202106081357525_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106081430437_RemoveGUIDRequired.cs" />
+    <Compile Include="Migrations\202106081430437_RemoveGUIDRequired.Designer.cs">
+      <DependentUpon>202106081430437_RemoveGUIDRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Show.cs" />
     <Compile Include="Migrations\202106080130207_AttendeeTicketAdded.cs" />
     <Compile Include="Migrations\202106080130207_AttendeeTicketAdded.Designer.cs">
       <DependentUpon>202106080130207_AttendeeTicketAdded.cs</DependentUpon>
@@ -109,12 +121,20 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ticket.cs" />
+
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+
+    <EmbeddedResource Include="Migrations\202106081357525_InitialMigration.resx">
+      <DependentUpon>202106081357525_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106081430437_RemoveGUIDRequired.resx">
+      <DependentUpon>202106081430437_RemoveGUIDRequired.cs</DependentUpon>
+
     <EmbeddedResource Include="Migrations\202106080130207_AttendeeTicketAdded.resx">
       <DependentUpon>202106080130207_AttendeeTicketAdded.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +149,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106081509504_MadeFKNullable.resx">
       <DependentUpon>202106081509504_MadeFKNullable.cs</DependentUpon>
+
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

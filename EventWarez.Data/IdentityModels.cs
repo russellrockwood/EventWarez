@@ -33,8 +33,12 @@ namespace EventWarez.Data
             return new ApplicationDbContext();
         }
 
+
+        public DbSet<Show> Shows { get; set; }
+        // public DbSet<> property
         public DbSet<Attendee> Attendees { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
