@@ -155,7 +155,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106081430437_RemoveGUIDRequired.resx">
       <DependentUpon>202106081430437_RemoveGUIDRequired.cs</DependentUpon>
-
+	</EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106080130207_AttendeeTicketAdded.resx">
       <DependentUpon>202106080130207_AttendeeTicketAdded.cs</DependentUpon>
     </EmbeddedResource>

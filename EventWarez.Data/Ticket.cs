@@ -19,9 +19,9 @@ namespace EventWarez.Data
         public int? AttId { get; set; }
         public virtual Attendee Attendee { get; set; }
 
-        //[ForeignKey(nameof(Show))]
-        //public int? ShowId { get; set; }
-        //public virtual Show Show { get; set; }  //Add this in when pushing to develop
+        [ForeignKey(nameof(Show))]
+        public int? ShowId { get; set; }
+        public virtual Show Show { get; set; }  //Add this in when pushing to develop
 
         [Required]
         public int Price { get; set; }

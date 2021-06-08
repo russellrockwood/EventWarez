@@ -15,5 +15,6 @@ namespace EventWarez.Models
         public TicketType TypeOfTicket { get; set; }
 
         public int TCount { get; set; }
+        public int? ShowId { get; set; }
     }
 }
