@@ -70,7 +70,7 @@ namespace EventWarez.Services
             }
         }
 
-        public bool UpdateStaff(StaffDetail model)
+        public bool UpdateStaff(StaffEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -89,7 +89,7 @@ namespace EventWarez.Services
             }
         }
 
-        public bool DeletStaff(int staffId)
+        public bool DeleteStaff(int staffId)
         {
             using (var ctx = new ApplicationDbContext())
             {
