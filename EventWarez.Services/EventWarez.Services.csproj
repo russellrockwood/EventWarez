@@ -54,8 +54,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AttendeeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <Compile Include="ShowService.cs" />
+=======
+    <Compile Include="TicketService.cs" />
+>>>>>>> 6e394db609dc279a85e01ffa824a8e1ab1a06ce3
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
