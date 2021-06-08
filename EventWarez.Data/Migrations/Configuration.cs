@@ -10,7 +10,10 @@ namespace EventWarez.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+<<<<<<< HEAD
             ContextKey = "EventWarez.Data.ApplicationDbContext";
+=======
+>>>>>>> a173a252236201cbef836b0f09854dfff4232f92
         }
 
         protected override void Seed(EventWarez.Data.ApplicationDbContext context)

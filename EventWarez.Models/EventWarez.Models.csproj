@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AttendeeCreate.cs" />
+    <Compile Include="AttendeeListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <Compile Include="StaffCreate.cs" />
     <Compile Include="StaffDetail.cs" />
     <Compile Include="StaffEdit.cs" />
     <Compile Include="StaffListItem.cs" />
+=======
+    <Compile Include="Show\ShowCreate.cs" />
+    <Compile Include="Show\ShowDetail.cs" />
+    <Compile Include="Show\ShowEdit.cs" />
+    <Compile Include="Show\ShowListItem.cs" />
+    <Compile Include="TicketCreate.cs" />
+    <Compile Include="TicketListItem.cs" />
+>>>>>>> a173a252236201cbef836b0f09854dfff4232f92
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
