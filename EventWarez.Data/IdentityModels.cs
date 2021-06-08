@@ -33,7 +33,7 @@ namespace EventWarez.Data
             return new ApplicationDbContext();
         }
 
-        // public DbSet<> property
+        public DbSet<Staff> Staff { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
