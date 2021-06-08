@@ -90,6 +90,22 @@
     <Compile Include="Migrations\202106080130207_AttendeeTicketAdded.Designer.cs">
       <DependentUpon>202106080130207_AttendeeTicketAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106081256218_TCountAdded.cs" />
+    <Compile Include="Migrations\202106081256218_TCountAdded.Designer.cs">
+      <DependentUpon>202106081256218_TCountAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106081347095_ChangedIdToTicketId.cs" />
+    <Compile Include="Migrations\202106081347095_ChangedIdToTicketId.Designer.cs">
+      <DependentUpon>202106081347095_ChangedIdToTicketId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106081508376_Test.cs" />
+    <Compile Include="Migrations\202106081508376_Test.Designer.cs">
+      <DependentUpon>202106081508376_Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106081509504_MadeFKNullable.cs" />
+    <Compile Include="Migrations\202106081509504_MadeFKNullable.Designer.cs">
+      <DependentUpon>202106081509504_MadeFKNullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ticket.cs" />
@@ -101,6 +117,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202106080130207_AttendeeTicketAdded.resx">
       <DependentUpon>202106080130207_AttendeeTicketAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106081256218_TCountAdded.resx">
+      <DependentUpon>202106081256218_TCountAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106081347095_ChangedIdToTicketId.resx">
+      <DependentUpon>202106081347095_ChangedIdToTicketId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106081508376_Test.resx">
+      <DependentUpon>202106081508376_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106081509504_MadeFKNullable.resx">
+      <DependentUpon>202106081509504_MadeFKNullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

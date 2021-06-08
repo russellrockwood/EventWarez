@@ -10,6 +10,7 @@ namespace EventWarez.Services
 {
     public class TicketService
     {
+        //Post
         public bool CreateTicket(TicketCreate model)
         {
             var entity =
@@ -23,7 +24,15 @@ namespace EventWarez.Services
                 ctx.Tickets.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
-
+        }
+        public IEnumerable<TicketListItem> GetTickets()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx.Tickets.Select(e => new TicketListItem { TicketId = e.TicketId, Price = e.Price, TypeTicket = e.TypeOfTicket });
+                return query.ToArray();
+            }
         }
     }
 }

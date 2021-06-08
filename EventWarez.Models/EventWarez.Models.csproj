@@ -55,8 +55,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AttendeeCreate.cs" />
+    <Compile Include="AttendeeListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TicketCreate.cs" />
+    <Compile Include="TicketListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace EventWarez.Models
 {
-    public class AttendeeCreate
+    class AttendeeDetail
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
     }
 }
