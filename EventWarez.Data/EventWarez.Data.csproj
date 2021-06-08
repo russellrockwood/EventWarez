@@ -87,6 +87,10 @@
     <Compile Include="Attendee.cs" />
     <Compile Include="IdentityModels.cs" />
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> a173a252236201cbef836b0f09854dfff4232f92
     <Compile Include="Migrations\202106081357525_InitialMigration.cs" />
     <Compile Include="Migrations\202106081357525_InitialMigration.Designer.cs">
       <DependentUpon>202106081357525_InitialMigration.cs</DependentUpon>
@@ -98,7 +102,10 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Show.cs" />
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> a173a252236201cbef836b0f09854dfff4232f92
     <Compile Include="Migrations\202106080130207_AttendeeTicketAdded.cs" />
     <Compile Include="Migrations\202106080130207_AttendeeTicketAdded.Designer.cs">
       <DependentUpon>202106080130207_AttendeeTicketAdded.cs</DependentUpon>
@@ -122,7 +129,11 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ticket.cs" />
+<<<<<<< HEAD
 >>>>>>> 6e394db609dc279a85e01ffa824a8e1ab1a06ce3
+=======
+
+>>>>>>> a173a252236201cbef836b0f09854dfff4232f92
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -130,12 +141,20 @@
   </ItemGroup>
   <ItemGroup>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> a173a252236201cbef836b0f09854dfff4232f92
     <EmbeddedResource Include="Migrations\202106081357525_InitialMigration.resx">
       <DependentUpon>202106081357525_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106081430437_RemoveGUIDRequired.resx">
       <DependentUpon>202106081430437_RemoveGUIDRequired.cs</DependentUpon>
+<<<<<<< HEAD
 =======
+=======
+
+>>>>>>> a173a252236201cbef836b0f09854dfff4232f92
     <EmbeddedResource Include="Migrations\202106080130207_AttendeeTicketAdded.resx">
       <DependentUpon>202106080130207_AttendeeTicketAdded.cs</DependentUpon>
     </EmbeddedResource>
@@ -150,7 +169,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106081509504_MadeFKNullable.resx">
       <DependentUpon>202106081509504_MadeFKNullable.cs</DependentUpon>
+<<<<<<< HEAD
 >>>>>>> 6e394db609dc279a85e01ffa824a8e1ab1a06ce3
+=======
+
+>>>>>>> a173a252236201cbef836b0f09854dfff4232f92
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

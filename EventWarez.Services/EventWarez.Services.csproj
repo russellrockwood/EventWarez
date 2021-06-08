@@ -57,10 +57,15 @@
     <Compile Include="AttendeeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="ShowService.cs" />
 =======
     <Compile Include="TicketService.cs" />
 >>>>>>> 6e394db609dc279a85e01ffa824a8e1ab1a06ce3
+=======
+    <Compile Include="ShowService.cs" />
+    <Compile Include="TicketService.cs" />
+>>>>>>> a173a252236201cbef836b0f09854dfff4232f92
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
