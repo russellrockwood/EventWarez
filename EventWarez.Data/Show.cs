@@ -12,9 +12,9 @@ namespace EventWarez.Data
         [Key]
         public int ShowId { get; set; }
 
-        //Do I need this
-        [Required]
-        public Guid OwnerId { get; set; }
+        ////Removed GUID requirement
+        //[Required]
+        //public Guid OwnerId { get; set; }
 
         [Required]
         public string Feature { get; set; }
