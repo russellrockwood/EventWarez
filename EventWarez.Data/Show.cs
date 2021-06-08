@@ -24,8 +24,6 @@ namespace EventWarez.Data
 
         //public virtual List<StaffOnHand> StaffOnHands { get; set; }
 
-        //public virtual List<Ticket> Tickets { get; set; }
-
-
+        public virtual List<Ticket> Tickets { get; set; }
     }
 }
