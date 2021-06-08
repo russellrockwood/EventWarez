@@ -15,8 +15,11 @@ namespace EventWarez.Data
         public string FirstName { get; set; }
         [Required]
         public string LastName { get; set; }
-        [Required]
-        public string AccessLevel { get; set; }
+        //[Required]
+        //public string AccessLevel { get; set; }
         public virtual List<Ticket> Tickets { get; set; }
+
+        //Add Datetime props for created utc
+        //Need to make accesslevel more of a "hasvip" method.
     }
 }
