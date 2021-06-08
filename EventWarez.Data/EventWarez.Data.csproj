@@ -84,12 +84,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attendee.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202106080130207_AttendeeTicketAdded.cs" />
+    <Compile Include="Migrations\202106080130207_AttendeeTicketAdded.Designer.cs">
+      <DependentUpon>202106080130207_AttendeeTicketAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ticket.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202106080130207_AttendeeTicketAdded.resx">
+      <DependentUpon>202106080130207_AttendeeTicketAdded.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
