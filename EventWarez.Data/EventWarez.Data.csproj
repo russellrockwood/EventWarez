@@ -86,93 +86,14 @@
   <ItemGroup>
     <Compile Include="Attendee.cs" />
     <Compile Include="IdentityModels.cs" />
-<<<<<<< HEAD
-    <Compile Include="Migrations\202106072238458_InitialCreate.cs" />
-    <Compile Include="Migrations\202106072238458_InitialCreate.Designer.cs">
-      <DependentUpon>202106072238458_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106081535082_InitialMigration.cs" />
-    <Compile Include="Migrations\202106081535082_InitialMigration.Designer.cs">
-      <DependentUpon>202106081535082_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Staff.cs" />
-=======
-
-    <Compile Include="Migrations\202106081357525_InitialMigration.cs" />
-    <Compile Include="Migrations\202106081357525_InitialMigration.Designer.cs">
-      <DependentUpon>202106081357525_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106081430437_RemoveGUIDRequired.cs" />
-    <Compile Include="Migrations\202106081430437_RemoveGUIDRequired.Designer.cs">
-      <DependentUpon>202106081430437_RemoveGUIDRequired.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Show.cs" />
-    <Compile Include="Migrations\202106080130207_AttendeeTicketAdded.cs" />
-    <Compile Include="Migrations\202106080130207_AttendeeTicketAdded.Designer.cs">
-      <DependentUpon>202106080130207_AttendeeTicketAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106081256218_TCountAdded.cs" />
-    <Compile Include="Migrations\202106081256218_TCountAdded.Designer.cs">
-      <DependentUpon>202106081256218_TCountAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106081347095_ChangedIdToTicketId.cs" />
-    <Compile Include="Migrations\202106081347095_ChangedIdToTicketId.Designer.cs">
-      <DependentUpon>202106081347095_ChangedIdToTicketId.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106081508376_Test.cs" />
-    <Compile Include="Migrations\202106081508376_Test.Designer.cs">
-      <DependentUpon>202106081508376_Test.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106081509504_MadeFKNullable.cs" />
-    <Compile Include="Migrations\202106081509504_MadeFKNullable.Designer.cs">
-      <DependentUpon>202106081509504_MadeFKNullable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ticket.cs" />
-
->>>>>>> a173a252236201cbef836b0f09854dfff4232f92
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-<<<<<<< HEAD
-    <EmbeddedResource Include="Migrations\202106072238458_InitialCreate.resx">
-      <DependentUpon>202106072238458_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106081535082_InitialMigration.resx">
-      <DependentUpon>202106081535082_InitialMigration.cs</DependentUpon>
-=======
-
-    <EmbeddedResource Include="Migrations\202106081357525_InitialMigration.resx">
-      <DependentUpon>202106081357525_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106081430437_RemoveGUIDRequired.resx">
-      <DependentUpon>202106081430437_RemoveGUIDRequired.cs</DependentUpon>
-	</EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106080130207_AttendeeTicketAdded.resx">
-      <DependentUpon>202106080130207_AttendeeTicketAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106081256218_TCountAdded.resx">
-      <DependentUpon>202106081256218_TCountAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106081347095_ChangedIdToTicketId.resx">
-      <DependentUpon>202106081347095_ChangedIdToTicketId.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106081508376_Test.resx">
-      <DependentUpon>202106081508376_Test.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106081509504_MadeFKNullable.resx">
-      <DependentUpon>202106081509504_MadeFKNullable.cs</DependentUpon>
-
->>>>>>> a173a252236201cbef836b0f09854dfff4232f92
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
