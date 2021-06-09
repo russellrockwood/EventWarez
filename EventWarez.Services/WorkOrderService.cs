@@ -46,5 +46,35 @@ namespace EventWarez.Services
                 return query.ToArray();
             }
         }
+
+        public bool UpdateWorkOrder(WorkOrderEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .WorkOrders
+                        .Single(e => e.WorkOrderId == model.WorkOrderId);
+
+                entity.StaffId = model.StaffId;
+                entity.ShowId = model.ShowId;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteWorkOrder(int workOrderId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .WorkOrders
+                        .Single(e => e.WorkOrderId == workOrderId);
+
+                ctx.WorkOrders.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

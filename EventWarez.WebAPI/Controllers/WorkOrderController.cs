@@ -11,25 +11,25 @@ namespace EventWarez.WebAPI.Controllers
 {
     public class WorkOrderController : ApiController
     {
-        [Authorize]
-        public IHttpActionResult Post(WorkOrderCreate workOrder)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-            
-            var service = new WorkOrderService();
+        //[Authorize]
+        //public IHttpActionResult Post(WorkOrderCreate workOrder)
+        //{
+        //    if (!ModelState.IsValid)
+        //        return BadRequest(ModelState);
 
-            if (!service.CreateWorkOrder(workOrder))
-                return InternalServerError();
+        //    var service = new WorkOrderService();
 
-            return Ok("Work Order Created");
-        }
+        //    if (!service.CreateWorkOrder(workOrder))
+        //        return InternalServerError();
 
-        public IHttpActionResult Get()
-        {
-            var service = new WorkOrderService();
-            var workOrders = service.GetWorkOrders();
-            return Ok(workOrders);
-        }
+        //    return Ok("Work Order Created");
+        //}
+
+        //public IHttpActionResult Get()
+        //{
+        //    var service = new WorkOrderService();
+        //    var workOrders = service.GetWorkOrders();
+        //    return Ok(workOrders);
+        //}
     }
 }
