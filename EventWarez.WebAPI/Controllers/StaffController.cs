@@ -58,5 +58,6 @@ namespace EventWarez.WebAPI.Controllers
 
             return Ok("Staff Deleted");
         }
+
     }
 }

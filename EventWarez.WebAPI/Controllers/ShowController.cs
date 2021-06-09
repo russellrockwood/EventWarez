@@ -1,3 +1,5 @@
+﻿using EventWarez.Models;
+using EventWarez.Models.Show;
 ﻿using EventWarez.Data;
 using EventWarez.Models.Show;
 using EventWarez.Models.Ticket;
@@ -67,6 +69,7 @@ namespace EventWarez.WebAPI.Controllers
             return Ok();
         }
 
+        [Route("api/Show")]
         [HttpPost]
         [Route("api/Show/Ticket")]
         public IHttpActionResult AddTicketsToShow(TicketCreate model)
@@ -95,8 +98,57 @@ namespace EventWarez.WebAPI.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("api/WorkOrder")]
+        public IHttpActionResult PostWorkOrder(WorkOrderCreate workOrder)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = new WorkOrderService();
+
+            if (!service.CreateWorkOrder(workOrder))
+                return InternalServerError();
+
+            return Ok("Work Order Created");
+        }
+
+        [HttpGet]
+        [Route("api/WorkOrders")]
+        public IHttpActionResult GetWorkOrders()
+        {
+            var service = new WorkOrderService();
+            var workOrders = service.GetWorkOrders();
+            return Ok(workOrders);
+        }
+
+        [HttpPut]
+        [Route("api/WorkOrder")]
+        public IHttpActionResult UpdateWorkOrder(WorkOrderEdit workOrderEdit)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = new WorkOrderService().UpdateWorkOrder(workOrderEdit);
+
+            if (!service)
+                return InternalServerError();
+
+            return Ok("Work Order Updated");
+        }
+
+        [HttpDelete]
+        [Route("api/WorkOrder")]
+        public IHttpActionResult DeleteWorkOrder(int id)
+        {
+            var service = new WorkOrderService();
+            if (!service.DeleteWorkOrder(id))
+                return InternalServerError();
+
+            return Ok("Work Order Deleted");
+        }
 
     }
 
-    
+
 }

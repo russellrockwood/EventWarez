@@ -18,6 +18,8 @@ namespace EventWarez.Data
         [Required]
         public DateTime ShowTime { get; set; }
 
+        public virtual List<WorkOrder> WorkOrders { get; set; }
+
         public virtual List<Ticket> Tickets { get; set; }
     }
 }

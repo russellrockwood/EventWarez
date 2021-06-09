@@ -86,6 +86,9 @@
   <ItemGroup>
     <Compile Include="Attendee.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202106091454445_WorkOrderMigration.cs" />
+    <Compile Include="Migrations\202106091454445_WorkOrderMigration.Designer.cs">
+      <DependentUpon>202106091454445_WorkOrderMigration.cs</DependentUpon>
     <Compile Include="Migrations\202106081932144_InitialCreate.cs" />
     <Compile Include="Migrations\202106081932144_InitialCreate.Designer.cs">
       <DependentUpon>202106081932144_InitialCreate.cs</DependentUpon>
@@ -111,12 +114,15 @@
     <Compile Include="Staff.cs" />
     <Compile Include="Show.cs" />
     <Compile Include="Ticket.cs" />
+    <Compile Include="WorkOrder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\202106091454445_WorkOrderMigration.resx">
+      <DependentUpon>202106091454445_WorkOrderMigration.cs</DependentUpon>
     <EmbeddedResource Include="Migrations\202106081932144_InitialCreate.resx">
       <DependentUpon>202106081932144_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>

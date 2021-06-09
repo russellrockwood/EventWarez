@@ -67,6 +67,12 @@
     <Compile Include="Show\ShowDetail.cs" />
     <Compile Include="Show\ShowEdit.cs" />
     <Compile Include="Show\ShowListItem.cs" />
+    <Compile Include="TicketCreate.cs" />
+    <Compile Include="TicketListItem.cs" />
+    <Compile Include="WorkOrderCreate.cs" />
+    <Compile Include="WorkOrderDetail.cs" />
+    <Compile Include="WorkOrderEdit.cs" />
+    <Compile Include="WorkOrderListItem.cs" />
     <Compile Include="Ticket\TicketCreate.cs" />
     <Compile Include="Ticket\TicketEdit.cs" />
     <Compile Include="Ticket\TicketDetail.cs" />

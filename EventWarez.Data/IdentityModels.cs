@@ -37,6 +37,7 @@ namespace EventWarez.Data
         public DbSet<Show> Shows { get; set; }
         public DbSet<Attendee> Attendees { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
+        public DbSet<WorkOrder> WorkOrders { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
