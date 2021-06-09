@@ -1,5 +1,5 @@
 ﻿using EventWarez.Data;
-using EventWarez.Models;
+using EventWarez.Models.Ticket;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace EventWarez.Services
 {
+    //This class might not (read: probably does not) need to exist.
     public class TicketService
     {
         //Post
@@ -16,6 +17,7 @@ namespace EventWarez.Services
             var entity =
                 new Ticket()
                 {
+                    ShowId = model.ShowId,
                     Price = model.Price,
                     TypeOfTicket = model.TypeOfTicket
                 };
@@ -33,6 +35,21 @@ namespace EventWarez.Services
                     ctx.Tickets.Select(e => new TicketListItem { TicketId = e.TicketId, Price = e.Price, TypeTicket = e.TypeOfTicket });
                 return query.ToArray();
             }
+        }
+
+        public bool AddAttendeeToTicket(TicketEdit ticket)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx.Tickets.Single(e => e.TicketId == ticket.TicketId);
+                entity.TicketId = ticket.TicketId;
+                entity.Show.Feature = ticket.Feature;
+                entity.AttId = ticket.AttId;
+
+                return ctx.SaveChanges() == 1;
+            }
+            
         }
     }
 }

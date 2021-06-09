@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EventWarez.Models
+namespace EventWarez.Models.Staff
 {
     public class StaffListItem
     {

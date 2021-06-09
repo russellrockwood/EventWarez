@@ -1,5 +1,7 @@
 ﻿using EventWarez.Data;
 using EventWarez.Models;
+using EventWarez.Models.Attendee;
+using EventWarez.Models.Ticket;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,5 +37,30 @@ namespace EventWarez.Services
                 return query.ToArray();
             }
         }
+
+        public AttendeeDetail GetTicketByAttendee(int attId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                ctx.Attendees.Single(e => e.AttId == attId);
+
+                return new AttendeeDetail
+                {
+                    AttId = attId,
+                    FirstName = entity.FirstName,
+                    LastName = entity.LastName,
+                    Tickets = entity.Tickets
+                    .Select(e => new TicketListItem()
+                    {
+                        TicketId = e.TicketId,
+                        Price=e.Price,
+                        TypeTicket=e.TypeOfTicket,
+                        Feature=e.Show.Feature,
+                        ShowTime=e.Show.ShowTime
+                    }).ToList()
+            };
+        }
     }
+}
 }

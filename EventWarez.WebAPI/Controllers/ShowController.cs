@@ -1,5 +1,8 @@
 ﻿using EventWarez.Models;
 using EventWarez.Models.Show;
+﻿using EventWarez.Data;
+using EventWarez.Models.Show;
+using EventWarez.Models.Ticket;
 using EventWarez.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -14,13 +17,17 @@ namespace EventWarez.WebAPI.Controllers
     [Authorize]
     public class ShowController : ApiController
     {
+        private TicketService CreateTickService()
+        {
+            var tickService = new TicketService();
+            return tickService;
+        }
         private ShowService CreateShowService()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var showService = new ShowService(/*userId*/);
+            var showService = new ShowService();
             return showService;
         }
-
+        [HttpPost]
         public IHttpActionResult Post(ShowCreate show)
         {
             if (!ModelState.IsValid)
@@ -33,14 +40,14 @@ namespace EventWarez.WebAPI.Controllers
 
             return Ok();
         }
-
+        [HttpGet]
         public IHttpActionResult Get()
         {
             ShowService showService = CreateShowService();
             var shows = showService.GetShows();
             return Ok(shows);
         }
-
+        [HttpGet]
         public IHttpActionResult Get(int id)
         {
             ShowService showService = CreateShowService();
@@ -48,6 +55,7 @@ namespace EventWarez.WebAPI.Controllers
             return Ok(show);
         }
 
+        [HttpPut]
         public IHttpActionResult Put(ShowEdit show)
         {
             if (!ModelState.IsValid)
@@ -62,6 +70,22 @@ namespace EventWarez.WebAPI.Controllers
         }
 
         [Route("api/Show")]
+        [HttpPost]
+        [Route("api/Show/Ticket")]
+        public IHttpActionResult AddTicketsToShow(TicketCreate model)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateTickService();
+
+            if (!service.CreateTicket(model))
+                return InternalServerError();
+            return Ok("Ticket Successfully Added To Show");
+        }
+
+        
+        [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
             {
