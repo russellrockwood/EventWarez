@@ -29,7 +29,19 @@ namespace EventWarez.Services
                 ctx.Shows.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
+
+            var entity = new WorkOrder()
+            {
+                StaffId = model.StaffId
+            }
+
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+       
+
 
         public IEnumerable<ShowListItem> GetShows()
         {

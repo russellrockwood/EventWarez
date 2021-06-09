@@ -22,7 +22,7 @@ namespace EventWarez.Data
         [Required]
         public DateTime ShowTime { get; set; }
 
-        //public virtual List<StaffOnHand> StaffOnHands { get; set; }
+        public virtual List<WorkOrder> WorkOrders { get; set; }// = new List<WorkOrder>();  // safeguard against null values
 
         public virtual List<Ticket> Tickets { get; set; }
     }
