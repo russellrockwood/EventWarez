@@ -67,6 +67,10 @@
     <Compile Include="Show\ShowListItem.cs" />
     <Compile Include="TicketCreate.cs" />
     <Compile Include="TicketListItem.cs" />
+    <Compile Include="WorkOrderCreate.cs" />
+    <Compile Include="WorkOrderDetail.cs" />
+    <Compile Include="WorkOrderEdit.cs" />
+    <Compile Include="WorkOrderListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

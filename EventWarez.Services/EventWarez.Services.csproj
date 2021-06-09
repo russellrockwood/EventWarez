@@ -59,6 +59,7 @@
     <Compile Include="StaffService.cs" />
     <Compile Include="ShowService.cs" />
     <Compile Include="TicketService.cs" />
+    <Compile Include="WorkOrderService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

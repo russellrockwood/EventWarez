@@ -14,11 +14,18 @@ namespace EventWarez.Data
         [Key]
         public int StaffId { get; set; }
 
+        [Required]
         public string FirstName { get; set; }
+
+        [Required]
         public string LastName { get; set; }
+
+        [Required]
         public Department Department { get; set; }
+
+        [Required]
         public AccessLevel AccessLevel { get; set; }
 
-        //public virtual List<StaffOnHand> {get; set;}
+        public virtual List<WorkOrder> WorkOrders { get; set; } //= new List<WorkOrder>();
     }
 }
