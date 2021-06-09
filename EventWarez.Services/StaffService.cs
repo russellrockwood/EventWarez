@@ -1,5 +1,6 @@
 ﻿using EventWarez.Data;
 using EventWarez.Models;
+using EventWarez.Models.Staff;
 using System;
 using System.Collections.Generic;
 using System.Linq;
