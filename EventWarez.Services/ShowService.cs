@@ -1,4 +1,5 @@
 ﻿using EventWarez.Data;
+using EventWarez.Models;
 using EventWarez.Models.Show;
 using System;
 using System.Collections.Generic;
@@ -101,8 +102,5 @@ namespace EventWarez.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-
-
-
     }
 }

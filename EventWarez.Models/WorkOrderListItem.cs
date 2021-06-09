@@ -10,8 +10,8 @@ namespace EventWarez.Models
     public class WorkOrderListItem
     {
         public int WorkOrderId { get; set; }
-        public int StaffId { get; set; }
-        public int ShowId { get; set; }
+        public int? StaffId { get; set; }
+        public int? ShowId { get; set; }
 
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }

@@ -12,17 +12,13 @@ namespace EventWarez.Data
         [Key]
         public int ShowId { get; set; }
 
-        ////Removed GUID requirement
-        //[Required]
-        //public Guid OwnerId { get; set; }
-
         [Required]
         public string Feature { get; set; }
 
         [Required]
         public DateTime ShowTime { get; set; }
 
-        //public virtual List<StaffOnHand> StaffOnHands { get; set; }
+        public virtual List<WorkOrder> WorkOrders { get; set; }
 
         public virtual List<Ticket> Tickets { get; set; }
     }
