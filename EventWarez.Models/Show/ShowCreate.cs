@@ -11,9 +11,7 @@ namespace EventWarez.Models.Show
     {
         [Required]
         public string Feature { get; set; }
-
         [Required]
         public DateTime ShowTime { get; set; }
-
     }
 }
