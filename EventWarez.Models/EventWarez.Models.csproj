@@ -54,10 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attendee\AttendeeCreate.cs" />
-    <Compile Include="Attendee\AttendeeDetail.cs" />
-    <Compile Include="Attendee\AttendeeEdit.cs" />
-    <Compile Include="Attendee\AttendeeListItem.cs" />
+    <Compile Include="AttendeeCreate.cs" />
+    <Compile Include="AttendeeDetail.cs" />
+    <Compile Include="AttendeeEdit.cs" />
+    <Compile Include="AttendeeListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Staff\StaffCreate.cs" />
     <Compile Include="Staff\StaffDetail.cs" />
@@ -68,15 +68,13 @@
     <Compile Include="Show\ShowEdit.cs" />
     <Compile Include="Show\ShowListItem.cs" />
     <Compile Include="TicketCreate.cs" />
+    <Compile Include="TicketEdit.cs" />
+    <Compile Include="TicketDetail.cs" />
     <Compile Include="TicketListItem.cs" />
     <Compile Include="WorkOrderCreate.cs" />
     <Compile Include="WorkOrderDetail.cs" />
     <Compile Include="WorkOrderEdit.cs" />
     <Compile Include="WorkOrderListItem.cs" />
-    <Compile Include="Ticket\TicketCreate.cs" />
-    <Compile Include="Ticket\TicketEdit.cs" />
-    <Compile Include="Ticket\TicketDetail.cs" />
-    <Compile Include="Ticket\TicketListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -88,5 +86,6 @@
       <Name>EventWarez.Data</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

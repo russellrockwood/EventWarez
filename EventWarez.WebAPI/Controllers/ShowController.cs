@@ -1,7 +1,6 @@
 ﻿using EventWarez.Models;
 using EventWarez.Models.Show;
 ﻿using EventWarez.Data;
-using EventWarez.Models.Show;
 using EventWarez.Models.Ticket;
 using EventWarez.Services;
 using Microsoft.AspNet.Identity;

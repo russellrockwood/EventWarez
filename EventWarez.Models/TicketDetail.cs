@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EventWarez.Models
+namespace EventWarez.Models.Ticket
 {
-    class TicketDetail
+    //This belongs in the Attendee Services.
+    public class TicketDetail
     {
+        public int TicketId { get; set; }
+        public string Feature { get; set; }
+        public int? AttId { get; set; }
     }
 }

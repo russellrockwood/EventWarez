@@ -54,6 +54,8 @@ namespace EventWarez.Services
                     .Select(e => new TicketListItem()
                     {
                         TicketId = e.TicketId,
+
+
                         Price=e.Price,
                         TypeTicket=e.TypeOfTicket,
                         Feature=e.Show.Feature,
