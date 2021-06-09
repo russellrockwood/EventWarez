@@ -30,10 +30,10 @@ namespace EventWarez.Services
                 return ctx.SaveChanges() == 1;
             }
 
-            var entity = new WorkOrder()
-            {
-                StaffId = model.StaffId
-            }
+            //var entity = new WorkOrder()
+            //{
+            //    StaffId = model.StaffId
+            //}
 
         }
 
