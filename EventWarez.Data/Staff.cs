@@ -27,10 +27,5 @@ namespace EventWarez.Data
         public AccessLevel AccessLevel { get; set; }
 
         public virtual List<WorkOrder> WorkOrders { get; set; }
-
-        //public void ordersMethod()
-        //{
-        //    List<WorkOrder> workOrders = WorkOrders.Select(e => e.WorkOrders).
-        //}
     }
 }

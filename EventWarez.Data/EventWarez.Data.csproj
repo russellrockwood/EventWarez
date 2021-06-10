@@ -87,8 +87,9 @@
     <Compile Include="Attendee.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\202106091454445_WorkOrderMigration.cs" />
-    <Compile Include="Migrations\202106091454445_WorkOrderMigration.Designer.cs">
-      <DependentUpon>202106091454445_WorkOrderMigration.cs</DependentUpon>
+	  <Compile Include="Migrations\202106091454445_WorkOrderMigration.Designer.cs">
+		  <DependentUpon>202106091454445_WorkOrderMigration.cs</DependentUpon>
+	  </Compile>
     <Compile Include="Migrations\202106081932144_InitialCreate.cs" />
     <Compile Include="Migrations\202106081932144_InitialCreate.Designer.cs">
       <DependentUpon>202106081932144_InitialCreate.cs</DependentUpon>
@@ -121,8 +122,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202106091454445_WorkOrderMigration.resx">
-      <DependentUpon>202106091454445_WorkOrderMigration.cs</DependentUpon>
+	  <EmbeddedResource Include="Migrations\202106091454445_WorkOrderMigration.resx">
+		  <DependentUpon>202106091454445_WorkOrderMigration.cs</DependentUpon>
+	  </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106081932144_InitialCreate.resx">
       <DependentUpon>202106081932144_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>

@@ -14,5 +14,6 @@ namespace EventWarez.Models.Staff
         public string LastName { get; set; }
         public Department Department { get; set; }
         public AccessLevel AccessLevel { get; set; }
+        public virtual List<WorkOrderListItem> WorkOrders { get; set; }
     }
 }

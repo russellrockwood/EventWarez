@@ -9,7 +9,6 @@ namespace EventWarez.Models
 {
     public class WorkOrderEdit
     {
-        [Required]
         public int WorkOrderId { get; set; }
         public int StaffId { get; set; }
         public int ShowId { get; set; }

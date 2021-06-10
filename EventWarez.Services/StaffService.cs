@@ -57,15 +57,22 @@ namespace EventWarez.Services
                     ctx
                         .Staff
                         .Single(e => e.StaffId == id);
-                return
-                    new StaffDetail
+
+                return new StaffDetail
+                {
+                    StaffId = entity.StaffId,
+                    FirstName = entity.FirstName,
+                    LastName = entity.LastName,
+                    Department = entity.Department,
+                    AccessLevel = entity.AccessLevel,
+                    WorkOrders = entity.WorkOrders
+                    .Select(e => new WorkOrderListItem()
                     {
-                        StaffId = entity.StaffId,
-                        FirstName = entity.FirstName,
-                        LastName = entity.LastName,
-                        Department = entity.Department,
-                        AccessLevel = entity.AccessLevel
-                    };
+                        WorkOrderId = e.WorkOrderId,
+                        ShowId = e.ShowId,
+                        CreatedUtc = e.CreatedUtc
+                    }).ToList()
+                 };
 
 
             }
