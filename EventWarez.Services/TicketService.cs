@@ -44,7 +44,6 @@ namespace EventWarez.Services
                 var entity =
                     ctx.Tickets.Single(e => e.TicketId == ticket.TicketId);
                 entity.TicketId = ticket.TicketId;
-                entity.Show.Feature = ticket.Feature;
                 entity.AttId = ticket.AttId;
 
                 return ctx.SaveChanges() == 1;

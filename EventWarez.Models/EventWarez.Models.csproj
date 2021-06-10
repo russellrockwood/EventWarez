@@ -56,7 +56,6 @@
   <ItemGroup>
     <Compile Include="AttendeeCreate.cs" />
     <Compile Include="AttendeeDetail.cs" />
-    <Compile Include="AttendeeEdit.cs" />
     <Compile Include="AttendeeListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Staff\StaffCreate.cs" />
@@ -69,7 +68,6 @@
     <Compile Include="Show\ShowListItem.cs" />
     <Compile Include="TicketCreate.cs" />
     <Compile Include="TicketEdit.cs" />
-    <Compile Include="TicketDetail.cs" />
     <Compile Include="TicketListItem.cs" />
     <Compile Include="WorkOrderCreate.cs" />
     <Compile Include="WorkOrderDetail.cs" />
