@@ -9,10 +9,8 @@ using System.Threading.Tasks;
 
 namespace EventWarez.Services
 {
-    //This class might not (read: probably does not) need to exist.
     public class TicketService
     {
-        //Post
         public bool CreateTicket(TicketCreate model)
         {
             var entity =
@@ -49,8 +47,7 @@ namespace EventWarez.Services
                 entity.AttId = ticket.AttId;
 
                 return ctx.SaveChanges() == 1;
-            }
-            
+            } 
         }
 
         public ShowDetail GetTicketByShow(int showId)
@@ -77,8 +74,9 @@ namespace EventWarez.Services
                             ShowTime = e.Show.ShowTime
                         }).ToList()
                     };
-
             }
         }
+
+
     }
 }

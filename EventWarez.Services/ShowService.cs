@@ -12,8 +12,6 @@ namespace EventWarez.Services
 {
     public class ShowService
     {
-       
-
         public bool CreateShow(ShowCreate model)
         {
             var entity = new Show()
@@ -62,10 +60,10 @@ namespace EventWarez.Services
                         ShowId = entity.ShowId,
                         Feature = entity.Feature,
                         ShowTime = entity.ShowTime
-                    };      
+                    };
             }
         }
-        
+
         public bool UpdateShow(ShowEdit model)
         {
             using (var ctx = new ApplicationDbContext())
@@ -96,5 +94,23 @@ namespace EventWarez.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        /// <summary>
+        /// Dont Know What I'm Doing
+        /// </summary>
+        public IEnumerable<ShowListItem> GetSoldOutShows()
+        {
+            List<Ticket> tickets = TicketService.GetShows();
+
+            foreach (var ticket in tickets)
+            {
+
+            }
+
+
+
+    }
+
+
     }
 }
