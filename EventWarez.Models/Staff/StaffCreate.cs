@@ -21,9 +21,6 @@ namespace EventWarez.Models.Staff
         public string LastName { get; set; }
 
         [Required]
-        public Department Department { get; set; }
-
-        [Required]
         public AccessLevel AccessLevel { get; set; }
      
     }

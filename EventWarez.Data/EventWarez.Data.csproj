@@ -86,28 +86,9 @@
   <ItemGroup>
     <Compile Include="Attendee.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202106091454445_WorkOrderMigration.cs" />
-    <Compile Include="Migrations\202106091454445_WorkOrderMigration.Designer.cs">
-      <DependentUpon>202106091454445_WorkOrderMigration.cs</DependentUpon>
-    <Compile Include="Migrations\202106081932144_InitialCreate.cs" />
-    <Compile Include="Migrations\202106081932144_InitialCreate.Designer.cs">
-      <DependentUpon>202106081932144_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106082026229_DibzInit.cs" />
-    <Compile Include="Migrations\202106082026229_DibzInit.Designer.cs">
-      <DependentUpon>202106082026229_DibzInit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106091316438_ForeignKeysRemoveFromJoiningTable.cs" />
-    <Compile Include="Migrations\202106091316438_ForeignKeysRemoveFromJoiningTable.Designer.cs">
-      <DependentUpon>202106091316438_ForeignKeysRemoveFromJoiningTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106091410494_RemovedTCountFromTicket.cs" />
-    <Compile Include="Migrations\202106091410494_RemovedTCountFromTicket.Designer.cs">
-      <DependentUpon>202106091410494_RemovedTCountFromTicket.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106091700164_ReAddedShowIdToTicket.cs" />
-    <Compile Include="Migrations\202106091700164_ReAddedShowIdToTicket.Designer.cs">
-      <DependentUpon>202106091700164_ReAddedShowIdToTicket.cs</DependentUpon>
+    <Compile Include="Migrations\202106101902520_DepartmentChanges.cs" />
+    <Compile Include="Migrations\202106101902520_DepartmentChanges.Designer.cs">
+      <DependentUpon>202106101902520_DepartmentChanges.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -121,22 +102,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202106091454445_WorkOrderMigration.resx">
-      <DependentUpon>202106091454445_WorkOrderMigration.cs</DependentUpon>
-    <EmbeddedResource Include="Migrations\202106081932144_InitialCreate.resx">
-      <DependentUpon>202106081932144_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106082026229_DibzInit.resx">
-      <DependentUpon>202106082026229_DibzInit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106091316438_ForeignKeysRemoveFromJoiningTable.resx">
-      <DependentUpon>202106091316438_ForeignKeysRemoveFromJoiningTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106091410494_RemovedTCountFromTicket.resx">
-      <DependentUpon>202106091410494_RemovedTCountFromTicket.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106091700164_ReAddedShowIdToTicket.resx">
-      <DependentUpon>202106091700164_ReAddedShowIdToTicket.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106101902520_DepartmentChanges.resx">
+      <DependentUpon>202106101902520_DepartmentChanges.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

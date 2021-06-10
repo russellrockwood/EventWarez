@@ -18,7 +18,6 @@ namespace EventWarez.Services
               {
                  FirstName = model.FirstName,
                  LastName = model.LastName,
-                 Department = model.Department,
                  AccessLevel = model.AccessLevel
               };
             using (var ctx = new ApplicationDbContext())
@@ -41,7 +40,6 @@ namespace EventWarez.Services
                                 StaffId = e.StaffId,
                                 FirstName = e.FirstName,
                                 LastName = e.LastName,
-                                Department = e.Department,
                                 AccessLevel = e.AccessLevel
                             }
                         );
@@ -57,15 +55,24 @@ namespace EventWarez.Services
                     ctx
                         .Staff
                         .Single(e => e.StaffId == id);
-                return
-                    new StaffDetail
+
+                return new StaffDetail
+                {
+                    StaffId = entity.StaffId,
+                    FirstName = entity.FirstName,
+                    LastName = entity.LastName,
+                    AccessLevel = entity.AccessLevel,
+                    WorkOrders = entity.WorkOrders
+                    .Select(e => new WorkOrderDetail()
                     {
-                        StaffId = entity.StaffId,
-                        FirstName = entity.FirstName,
-                        LastName = entity.LastName,
-                        Department = entity.Department,
-                        AccessLevel = entity.AccessLevel
-                    };
+                        WorkOrderId = e.WorkOrderId,
+                        StaffId = e.StaffId,
+                        ShowId = e.ShowId,
+                        Department = e.Department,
+                        CreatedUtc = e.CreatedUtc,
+                        ModifiedUtc = e.ModifiedUtc
+                    }).ToList()
+                 };
 
 
             }
@@ -79,11 +86,9 @@ namespace EventWarez.Services
                     ctx
                         .Staff
                         .Single(e => e.StaffId == model.StaffId);
-
                 
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
-                entity.Department = model.Department;
                 entity.AccessLevel = model.AccessLevel;
 
                 return ctx.SaveChanges() == 1;
