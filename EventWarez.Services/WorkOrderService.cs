@@ -50,7 +50,7 @@ namespace EventWarez.Services
             }
         }
 
-        public WorkOrderDetail GetWorkOrderById(int id)
+        public WorkOrderDetail GetWorkOrder(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
