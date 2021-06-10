@@ -1,15 +1,9 @@
-﻿using EventWarez.Models;
-using EventWarez.Models.Show;
 ﻿using EventWarez.Data;
+using EventWarez.Models;
 using EventWarez.Models.Show;
 using EventWarez.Models.Ticket;
 using EventWarez.Services;
-using Microsoft.AspNet.Identity;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace EventWarez.WebAPI.Controllers
@@ -66,10 +60,9 @@ namespace EventWarez.WebAPI.Controllers
             if (!service.UpdateShow(show))
                 return InternalServerError();
 
-            return Ok();
+            return Ok("Show Successfully Updated");
         }
 
-        [Route("api/Show")]
         [HttpPost]
         [Route("api/Show/Ticket")]
         public IHttpActionResult AddTicketsToShow(TicketCreate model)
@@ -84,7 +77,16 @@ namespace EventWarez.WebAPI.Controllers
             return Ok("Ticket Successfully Added To Show");
         }
 
-        
+        [HttpGet]
+        [Route("api/Show/Ticket")]
+        public IHttpActionResult GetTicketsByShow(int showId)
+        {
+
+            TicketService tickService = new TicketService();
+            var ticket = tickService.GetTicketByShow(showId);
+            return Ok(ticket);
+        }
+
         [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
@@ -94,7 +96,7 @@ namespace EventWarez.WebAPI.Controllers
                 if (!service.DeleteShow(id))
                     return InternalServerError();
 
-                return Ok("Note was successfully deleted");
+                return Ok("Show Successfully Deleted");
             }
         }
 

@@ -62,8 +62,7 @@ namespace EventWarez.Services
                         ShowId = entity.ShowId,
                         Feature = entity.Feature,
                         ShowTime = entity.ShowTime
-                    };
-                    
+                    };      
             }
         }
         

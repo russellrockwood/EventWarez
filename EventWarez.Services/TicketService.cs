@@ -1,4 +1,5 @@
 ﻿using EventWarez.Data;
+using EventWarez.Models.Show;
 using EventWarez.Models.Ticket;
 using System;
 using System.Collections.Generic;
@@ -50,6 +51,34 @@ namespace EventWarez.Services
                 return ctx.SaveChanges() == 1;
             }
             
+        }
+
+        public ShowDetail GetTicketByShow(int showId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Shows
+                    .Single(e => e.ShowId == showId);
+                return
+                    new ShowDetail
+                    {
+                        ShowId = showId,
+                        Feature = entity.Feature,
+                        ShowTime = entity.ShowTime,
+                        Tickets = entity.Tickets
+                        .Select(e => new TicketListItem()
+                        {
+                            TicketId = e.TicketId,
+                            Price = e.Price,
+                            TypeTicket = e.TypeOfTicket,
+                            Feature = e.Show.Feature,
+                            ShowTime = e.Show.ShowTime
+                        }).ToList()
+                    };
+
+            }
         }
     }
 }
