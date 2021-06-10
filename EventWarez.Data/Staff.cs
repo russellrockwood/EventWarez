@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace EventWarez.Data
 {
-    public enum Department { BoxOffice, Catering, Security, Marketing}
     public enum AccessLevel { Low, Medium, High}
     public class Staff
     {
@@ -19,9 +19,6 @@ namespace EventWarez.Data
 
         [Required]
         public string LastName { get; set; }
-
-        [Required]
-        public Department Department { get; set; }
 
         [Required]
         public AccessLevel AccessLevel { get; set; }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EventWarez.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -14,5 +15,9 @@ namespace EventWarez.Models
 
         [Required]
         public int ShowId { get; set; }
+
+        [Required]
+        public Department Department { get; set; }
+
     }
 }

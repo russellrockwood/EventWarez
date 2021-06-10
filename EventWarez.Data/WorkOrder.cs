@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace EventWarez.Data
 {
+    public enum Department { BoxOffice, Bar, Security, Floor }
     public class WorkOrder
     {
+
         [Key]
         public int WorkOrderId { get; set; }
 
@@ -22,6 +24,9 @@ namespace EventWarez.Data
         [ForeignKey(nameof(Show))]
         public int ShowId { get; set; }
         public virtual Show Show { get; set; }
+
+        [Required]
+        public Department Department { get; set; }
 
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }

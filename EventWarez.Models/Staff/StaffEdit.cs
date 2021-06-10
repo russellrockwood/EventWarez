@@ -19,7 +19,6 @@ namespace EventWarez.Models.Staff
         [MinLength(2, ErrorMessage = "Please enter at least 2 characters")]
         [MaxLength(50, ErrorMessage = "50 characters max")]
         public string LastName { get; set; }
-        public Department Department { get; set; }
         public AccessLevel AccessLevel { get; set; }
     }
 }

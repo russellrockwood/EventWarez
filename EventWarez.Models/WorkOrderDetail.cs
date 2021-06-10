@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EventWarez.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace EventWarez.Models
         public int WorkOrderId { get; set; }
         public int StaffId { get; set; }
         public int ShowId { get; set; }
+        public Department Department { get; set; }
 
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }

@@ -17,6 +17,7 @@ namespace EventWarez.Services
                 {
                     StaffId = model.StaffId,
                     ShowId = model.ShowId,
+                    Department = model.Department,
                     CreatedUtc = DateTime.Now
                 };
             using (var ctx = new ApplicationDbContext())
@@ -26,7 +27,7 @@ namespace EventWarez.Services
             }
         }
 
-        public IEnumerable<WorkOrderListItem> GetWorkOrders()
+        public IEnumerable<WorkOrderDetail> GetWorkOrders()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -35,15 +36,38 @@ namespace EventWarez.Services
                         .WorkOrders
                         .Select(
                             e =>
-                                new WorkOrderListItem
+                                new WorkOrderDetail
                                 {
                                     WorkOrderId = e.WorkOrderId,
                                     StaffId = e.StaffId,
-                                    ShowId = e.ShowId,
-                                    CreatedUtc = e.CreatedUtc
+                                    ShowId = e.ShowId,  
+                                    Department = e.Department,
+                                    CreatedUtc = e.CreatedUtc, 
+                                    ModifiedUtc = e.ModifiedUtc
                                 }
                         );
                 return query.ToArray();
+            }
+        }
+
+        public WorkOrderDetail GetWorkOrderById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .WorkOrders
+                        .Single(e => e.WorkOrderId == id);
+                return
+                    new WorkOrderDetail
+                    {
+                        WorkOrderId = entity.WorkOrderId,
+                        StaffId = entity.StaffId,
+                        ShowId = entity.ShowId,
+                        Department = entity.Department,
+                        CreatedUtc = entity.CreatedUtc,
+                        ModifiedUtc = entity.ModifiedUtc
+                    };
             }
         }
 
@@ -58,6 +82,8 @@ namespace EventWarez.Services
 
                 entity.StaffId = model.StaffId;
                 entity.ShowId = model.ShowId;
+                entity.Department = model.Department;
+                entity.ModifiedUtc = DateTime.Now;
 
                 return ctx.SaveChanges() == 1;
             }
