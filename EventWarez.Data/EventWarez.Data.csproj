@@ -89,7 +89,8 @@
     <Compile Include="Migrations\202106092058389_migrate.cs" />
     <Compile Include="Migrations\202106092058389_migrate.Designer.cs">
       <DependentUpon>202106092058389_migrate.cs</DependentUpon>
-    <Compile Include="Migrations\202106101902520_DepartmentChanges.cs" />
+	</Compile>
+	<Compile Include="Migrations\202106101902520_DepartmentChanges.cs" />
     <Compile Include="Migrations\202106101902520_DepartmentChanges.Designer.cs">
       <DependentUpon>202106101902520_DepartmentChanges.cs</DependentUpon>
     </Compile>
@@ -107,7 +108,8 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202106092058389_migrate.resx">
       <DependentUpon>202106092058389_migrate.cs</DependentUpon>
-    <EmbeddedResource Include="Migrations\202106101902520_DepartmentChanges.resx">
+	</EmbeddedResource>
+	<EmbeddedResource Include="Migrations\202106101902520_DepartmentChanges.resx">
       <DependentUpon>202106101902520_DepartmentChanges.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

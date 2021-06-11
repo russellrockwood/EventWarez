@@ -114,8 +114,6 @@ namespace EventWarez.WebAPI.Controllers
 
         [HttpGet]
         [Route("api/Show/WorkOrder")]
-        public IHttpActionResult GetWorkOrders()
-        [Route("api/WorkOrder")]
         public IHttpActionResult GetAllWorkOrders()
         {
             var service = new WorkOrderService();
