@@ -60,5 +60,15 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EventWarez.Data\EventWarez.Data.csproj">
+      <Project>{55e21481-2a38-4fa4-9842-0387f012682c}</Project>
+      <Name>EventWarez.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EventWarez.Models\EventWarez.Models.csproj">
+      <Project>{0a079ebe-3abc-4fb8-8ea1-b2cab56b8544}</Project>
+      <Name>EventWarez.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
