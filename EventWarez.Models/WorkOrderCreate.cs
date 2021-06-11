@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EventWarez.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -10,9 +11,13 @@ namespace EventWarez.Models
     public class WorkOrderCreate
     {
         [Required]
-        public int? StaffId { get; set; }
+        public int StaffId { get; set; }
 
         [Required]
-        public int? ShowId { get; set; }
+        public int ShowId { get; set; }
+
+        [Required]
+        public Department Department { get; set; }
+
     }
 }

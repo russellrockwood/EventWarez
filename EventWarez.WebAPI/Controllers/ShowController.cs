@@ -26,6 +26,7 @@ namespace EventWarez.WebAPI.Controllers
             var showService = new ShowService();
             return showService;
         }
+
         [HttpPost]
         public IHttpActionResult Post(ShowCreate show)
         {
@@ -92,7 +93,7 @@ namespace EventWarez.WebAPI.Controllers
                 if (!service.DeleteShow(id))
                     return InternalServerError();
 
-                return Ok("Note was successfully deleted");
+                return Ok("Show was successfully deleted");
             }
         }
 
@@ -114,9 +115,20 @@ namespace EventWarez.WebAPI.Controllers
         [HttpGet]
         [Route("api/Show/WorkOrder")]
         public IHttpActionResult GetWorkOrders()
+        [Route("api/WorkOrder")]
+        public IHttpActionResult GetAllWorkOrders()
         {
             var service = new WorkOrderService();
             var workOrders = service.GetWorkOrders();
+            return Ok(workOrders);
+        }
+
+        [HttpGet]
+        [Route("api/WorkOrder/{id}")]
+        public IHttpActionResult GetSingleWorkOrder(int id)
+        {
+            var service = new WorkOrderService();
+            var workOrders = service.GetWorkOrder(id);
             return Ok(workOrders);
         }
 
