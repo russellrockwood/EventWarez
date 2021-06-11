@@ -151,8 +151,6 @@ namespace EventWarez.WebAPI.Controllers
         }
 
 
-
-
         ///
         [HttpPut]
         [Route("api/Show/SellOut")]
