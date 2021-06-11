@@ -10,7 +10,6 @@ namespace EventWarez.Data
 {
     public class Ticket
     {
-        
         public int TicketId { get; set; }
         public int? ShowId { get; set; }
         public virtual Show Show { get; set; }
