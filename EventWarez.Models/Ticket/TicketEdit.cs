@@ -9,7 +9,6 @@ namespace EventWarez.Models.Ticket
     public class TicketEdit
     {
         public int TicketId { get; set; }
-        public string Feature { get; set; }
         public int AttId { get; set; }
     }
 }

@@ -21,6 +21,7 @@ namespace EventWarez.WebAPI.Controllers
             var showService = new ShowService();
             return showService;
         }
+
         [HttpPost]
         public IHttpActionResult Post(ShowCreate show)
         {
@@ -101,7 +102,7 @@ namespace EventWarez.WebAPI.Controllers
         }
 
         [HttpPost]
-        [Route("api/WorkOrder")]
+        [Route("api/Show/WorkOrder")]
         public IHttpActionResult PostWorkOrder(WorkOrderCreate workOrder)
         {
             if (!ModelState.IsValid)
@@ -116,16 +117,27 @@ namespace EventWarez.WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("api/WorkOrders")]
-        public IHttpActionResult GetWorkOrders()
+        [Route("api/Show/WorkOrder")]
+        //public IHttpActionResult GetWorkOrders()
+        //[Route("api/WorkOrder")]
+        public IHttpActionResult GetAllWorkOrders()
         {
             var service = new WorkOrderService();
             var workOrders = service.GetWorkOrders();
             return Ok(workOrders);
         }
 
+        [HttpGet]
+        [Route("api/WorkOrder/{id}")]
+        public IHttpActionResult GetSingleWorkOrder(int id)
+        {
+            var service = new WorkOrderService();
+            var workOrders = service.GetWorkOrder(id);
+            return Ok(workOrders);
+        }
+
         [HttpPut]
-        [Route("api/WorkOrder")]
+        [Route("api/Show/WorkOrder")]
         public IHttpActionResult UpdateWorkOrder(WorkOrderEdit workOrderEdit)
         {
             if (!ModelState.IsValid)
@@ -140,7 +152,7 @@ namespace EventWarez.WebAPI.Controllers
         }
 
         [HttpDelete]
-        [Route("api/WorkOrder")]
+        [Route("api/Show/WorkOrder")]
         public IHttpActionResult DeleteWorkOrder(int id)
         {
             var service = new WorkOrderService();
