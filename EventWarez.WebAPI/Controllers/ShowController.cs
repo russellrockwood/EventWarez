@@ -21,7 +21,6 @@ namespace EventWarez.WebAPI.Controllers
             var showService = new ShowService();
             return showService;
         }
-
         [HttpPost]
         public IHttpActionResult Post(ShowCreate show)
         {
@@ -88,6 +87,16 @@ namespace EventWarez.WebAPI.Controllers
             return Ok(ticket);
         }
 
+        //
+        [HttpGet]
+        [Route("api/Show/WorkOrder")]
+        public IHttpActionResult GetWorkOrdersByShow(int showId)
+        {
+            WorkOrderService workOrderService = new WorkOrderService();
+            var workOrder = workOrderService.GetWorkOrdersByShow(showId);
+            return Ok(workOrder);
+        }
+        //
         [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
@@ -118,8 +127,6 @@ namespace EventWarez.WebAPI.Controllers
 
         [HttpGet]
         [Route("api/Show/WorkOrder")]
-        //public IHttpActionResult GetWorkOrders()
-        //[Route("api/WorkOrder")]
         public IHttpActionResult GetAllWorkOrders()
         {
             var service = new WorkOrderService();

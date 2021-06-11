@@ -1,5 +1,6 @@
 ﻿using EventWarez.Data;
 using EventWarez.Models;
+using EventWarez.Models.Show;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -101,6 +102,34 @@ namespace EventWarez.Services
                 ctx.WorkOrders.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }
+        }
+
+        //
+        public ShowDetail GetWorkOrdersByShow(int showId)
+        {
+            using ( var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Shows
+                    .Single(e => e.ShowId == showId);
+                return
+                    new ShowDetail
+                    {
+                        ShowId = showId,
+                        Feature = entity.Feature,
+                        ShowTime = entity.ShowTime,
+                        WorkOrders = entity.WorkOrders
+                        .Select(e => new WorkOrderDetail()
+                        {
+                            WorkOrderId = e.WorkOrderId,
+                            StaffId = e.StaffId,
+                            ShowId = e.ShowId,
+                            Department = e.Department
+                        }).ToList()
+                    };
+            }
+            //
         }
     }
 }

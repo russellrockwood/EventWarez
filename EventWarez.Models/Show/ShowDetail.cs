@@ -17,5 +17,8 @@ namespace EventWarez.Models.Show
 
         public List<TicketListItem> Tickets { get; set; }
 
+        //
+        public List<WorkOrderDetail> WorkOrders { get; set; }
+        //
     }
 }

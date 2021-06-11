@@ -95,25 +95,7 @@ namespace EventWarez.Services
             }
         }
 
-        /// <summary>
-        /// Dont Know What I'm Doing
-        /// </summary>
-        //public IEnumerable<ShowListItem> GetSoldOutShows()
-        //{
-        //    using (var ctx = GetShows())
-        //    {
-        //        var query =
-        //            ctx
-        //            .Shows
-        //            .Select
-        //    }
-            //List<Ticket> tickets = TicketService.GetShows();
-
-                //foreach (var ticket in tickets)
-                //{
-
-                //}
-        ///
+        //
         public bool SellOut(int showId)
         {
             using (var ctx = new ApplicationDbContext())
@@ -127,11 +109,9 @@ namespace EventWarez.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-
-
-
-        }
-
-
+        //
     }
+
+
+}
 
