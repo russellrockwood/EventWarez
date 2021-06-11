@@ -1,14 +1,9 @@
-﻿using EventWarez.Models;
-using EventWarez.Models.Show;
 ﻿using EventWarez.Data;
+using EventWarez.Models;
+using EventWarez.Models.Show;
 using EventWarez.Models.Ticket;
 using EventWarez.Services;
-using Microsoft.AspNet.Identity;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace EventWarez.WebAPI.Controllers
@@ -66,7 +61,7 @@ namespace EventWarez.WebAPI.Controllers
             if (!service.UpdateShow(show))
                 return InternalServerError();
 
-            return Ok();
+            return Ok("Show Successfully Updated");
         }
 
         [HttpPost]
@@ -83,7 +78,16 @@ namespace EventWarez.WebAPI.Controllers
             return Ok("Ticket Successfully Added To Show");
         }
 
-        
+        [HttpGet]
+        [Route("api/Show/Ticket")]
+        public IHttpActionResult GetTicketsByShow(int showId)
+        {
+
+            TicketService tickService = new TicketService();
+            var ticket = tickService.GetTicketByShow(showId);
+            return Ok(ticket);
+        }
+
         [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
@@ -93,7 +97,7 @@ namespace EventWarez.WebAPI.Controllers
                 if (!service.DeleteShow(id))
                     return InternalServerError();
 
-                return Ok("Show was successfully deleted");
+                return Ok("Show Successfully Deleted");
             }
         }
 
@@ -114,6 +118,8 @@ namespace EventWarez.WebAPI.Controllers
 
         [HttpGet]
         [Route("api/Show/WorkOrder")]
+        //public IHttpActionResult GetWorkOrders()
+        //[Route("api/WorkOrder")]
         public IHttpActionResult GetAllWorkOrders()
         {
             var service = new WorkOrderService();
@@ -155,6 +161,22 @@ namespace EventWarez.WebAPI.Controllers
 
             return Ok("Work Order Deleted");
         }
+
+
+        ///
+        [HttpPut]
+        [Route("api/Show/SellOut")]
+        public IHttpActionResult SellOutTickets(int showId)
+        {
+            var service = CreateShowService();
+
+            if (!service.SellOut(showId))
+                return InternalServerError();
+
+            return Ok($"Tickets are sold out to Show: {showId}");
+            
+        }
+
 
     }
 

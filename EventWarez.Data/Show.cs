@@ -21,5 +21,8 @@ namespace EventWarez.Data
         public virtual List<WorkOrder> WorkOrders { get; set; }
 
         public virtual List<Ticket> Tickets { get; set; }
+
+        ///
+        public bool IsSoldOut { get; set; }
     }
 }
