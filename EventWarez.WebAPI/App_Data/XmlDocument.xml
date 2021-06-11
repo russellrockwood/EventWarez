@@ -508,6 +508,9 @@
             <param name="attId">Insert an Attendee Id into the uri arguments, and return a list of relevant tickets.</param>
             <returns></returns>
         </member>
+        <member name="M:EventWarez.WebAPI.Controllers.ShowController.SellOutTickets(System.Int32)">
+            
+        </member>
         <member name="M:EventWarez.WebAPI.Controllers.ValuesController.Get">
             <summary>
             Gets some very important data from the server.
