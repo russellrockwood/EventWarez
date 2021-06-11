@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EventWarez.Models.Ticket;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,8 @@ namespace EventWarez.Models.Show
         public string Feature { get; set; }
 
         public DateTime ShowTime { get; set; }
+
+        public List<TicketListItem> Tickets { get; set; }
 
     }
 }

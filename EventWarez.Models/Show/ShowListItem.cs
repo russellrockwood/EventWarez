@@ -13,5 +13,8 @@ namespace EventWarez.Models.Show
         public string Feature { get; set; }
 
         public DateTime ShowTime { get; set; }
+
+        ///
+        public bool IsSoldOut { get; set; }
     }
 }
