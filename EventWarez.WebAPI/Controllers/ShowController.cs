@@ -150,6 +150,24 @@ namespace EventWarez.WebAPI.Controllers
             return Ok("Work Order Deleted");
         }
 
+
+
+
+        ///
+        [HttpPut]
+        [Route("api/Show/SellOut")]
+        public IHttpActionResult SellOutTickets(int showId)
+        {
+            var service = CreateShowService();
+
+            if (!service.SellOut(showId))
+                return InternalServerError();
+
+            return Ok($"Tickets are sold out to Show: {showId}");
+            
+        }
+
+
     }
 
 

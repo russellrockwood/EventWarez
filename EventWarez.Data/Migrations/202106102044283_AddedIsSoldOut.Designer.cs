@@ -7,13 +7,13 @@ namespace EventWarez.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class DibzInit : IMigrationMetadata
+    public sealed partial class AddedIsSoldOut : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(DibzInit));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedIsSoldOut));
         
         string IMigrationMetadata.Id
         {
-            get { return "202106082026229_DibzInit"; }
+            get { return "202106102044283_AddedIsSoldOut"; }
         }
         
         string IMigrationMetadata.Source

@@ -46,6 +46,10 @@ namespace EventWarez.WebAPI.Controllers
 
             var service = CreateTickService();
 
+            //
+            //if (Show.IsSoldOut)
+            //    return BadRequest("Show Sold Out, Unable To Purchase Ticket");
+            //
             if (!service.AddAttendeeToTicket(ticket))
                 return InternalServerError();
 

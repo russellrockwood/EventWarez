@@ -98,19 +98,40 @@ namespace EventWarez.Services
         /// <summary>
         /// Dont Know What I'm Doing
         /// </summary>
-        public IEnumerable<ShowListItem> GetSoldOutShows()
+        //public IEnumerable<ShowListItem> GetSoldOutShows()
+        //{
+        //    using (var ctx = GetShows())
+        //    {
+        //        var query =
+        //            ctx
+        //            .Shows
+        //            .Select
+        //    }
+            //List<Ticket> tickets = TicketService.GetShows();
+
+                //foreach (var ticket in tickets)
+                //{
+
+                //}
+        ///
+        public bool SellOut(int showId)
         {
-            List<Ticket> tickets = TicketService.GetShows();
-
-            foreach (var ticket in tickets)
+            using (var ctx = new ApplicationDbContext())
             {
-
+                var entity =
+                    ctx
+                    .Shows
+                    .Single(e => e.ShowId == showId);
+                entity.IsSoldOut = false;
+                entity.IsSoldOut = true;
+                return ctx.SaveChanges() == 1;
             }
+        }
 
+
+
+        }
 
 
     }
 
-
-    }
-}
