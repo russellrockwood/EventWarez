@@ -71,6 +71,7 @@
     <Compile Include="Ticket\TicketCreate.cs" />
     <Compile Include="Ticket\TicketEdit.cs" />
     <Compile Include="Ticket\TicketListItem.cs" />
+    <Compile Include="WorkOrderAssign.cs" />
     <Compile Include="WorkOrderCreate.cs" />
     <Compile Include="WorkOrderDetail.cs" />
     <Compile Include="WorkOrderEdit.cs" />

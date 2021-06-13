@@ -118,13 +118,27 @@ namespace EventWarez.WebAPI.Controllers
 
         [HttpGet]
         [Route("api/Show/WorkOrder")]
-        //public IHttpActionResult GetWorkOrders()
-        //[Route("api/WorkOrder")]
-        public IHttpActionResult GetAllWorkOrders()
+        public IHttpActionResult GetWorkOrders()
         {
             var service = new WorkOrderService();
-            var workOrders = service.GetWorkOrders();
+            var workOrders = service.GetAllWorkOrders();
             return Ok(workOrders);
+        }
+
+        [HttpGet]
+        [Route("api/Show/FilledWorkOrders/{showId}")]
+        public IHttpActionResult GetStaffRoster(int showId)
+        {
+            var service = new WorkOrderService();
+            return Ok(service.GetFilledWorkOrders(showId));
+        }
+
+        [HttpGet]
+        [Route("api/Show/UnfilledWorkOrders/{showId}")]
+        public IHttpActionResult GetOpenWorkOrders(int showId)
+        {
+            var service = new WorkOrderService();
+            return Ok(service.GetUnfilledWorkOrders(showId));
         }
 
         [HttpGet]
@@ -149,6 +163,20 @@ namespace EventWarez.WebAPI.Controllers
                 return InternalServerError();
 
             return Ok("Work Order Updated");
+        }
+
+        [HttpPut]
+        [Route("api/Show/FillWorkOrder")]
+        public IHttpActionResult FillWorkOrder(WorkOrderAssign assignmentInfo)
+        {
+            var service = new WorkOrderService();
+
+            if (!service.AddStaffToWorkOrder(assignmentInfo))
+            {
+                return InternalServerError();
+            }
+
+            return Ok("Employee added to work order");
         }
 
         [HttpDelete]
@@ -176,7 +204,6 @@ namespace EventWarez.WebAPI.Controllers
             return Ok($"Tickets are sold out to Show: {showId}");
             
         }
-
 
     }
 
