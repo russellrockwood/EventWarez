@@ -46,10 +46,19 @@ Use your preffered API service tool to send requests. I recommend [Postman](http
 </p>
 
  - Manage staff and fill event work orders.
- - 
- <img src="https://github.com/russellrockwood/EventWarez/blob/russell/EventWarez.WebAPI/Images/createStaff.jpg" width="800" /> 
+
+ <img src="https://github.com/russellrockwood/EventWarez/blob/russell/EventWarez.WebAPI/Images/createStaff.jpg" width="788" /> 
+ 
+ - Create show tickets and add attendees
+ 
+  <p float="left">
+  <img src="https://github.com/russellrockwood/EventWarez/blob/russell/EventWarez.WebAPI/Images/createTicket.jpg" width="250"/>
+  <img src="https://github.com/russellrockwood/EventWarez/blob/russell/EventWarez.WebAPI/Images/AddAttendeeToTicket.jpg" width="250" /> 
+</p>
+
  
  
+
 ## Room for Improvement
 
 The following features can be further expanded upon to increase functionality of the applications:
