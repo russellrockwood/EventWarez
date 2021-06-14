@@ -28,7 +28,7 @@ Select the EventWarez.WebAPI assembly as your startup project and run the progra
 
 Click the API tab on the startup page for HTTP request information.
 
-Use your preffered API service tool to send requests. I recommend [Postman](https://www.postman.com/) or [Swagger](https://swagger.io/)
+Use your preffered API service tool to send requests. I recommend [Postman](https://www.postman.com/) or [Swagger](https://swagger.io/).
 
 ## Technologies Used
 - C#
@@ -38,8 +38,9 @@ Use your preffered API service tool to send requests. I recommend [Postman](http
 - [dbdiagram.io](https://dbdiagram.io/home) A free, simple tool to draw ER diagrams.
 
 ## Featured Applications
-
-
+ **Create and view lists of upcoming events**
+ <img src="https://github.com/russellrockwood/EventWarez/blob/russell/EventWarez.WebAPI/Images/createNewShow.jpg" width="467" height="331">
+ <img src="https://github.com/russellrockwood/EventWarez/blob/russell/EventWarez.WebAPI/Images/viewUpcomingEvents.jpg" width="467" height="331">
 
 ## Room for Improvement
 
