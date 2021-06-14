@@ -39,8 +39,8 @@ Use your preffered API service tool to send requests. I recommend [Postman](http
 
 ## Featured Applications
  -**Create and view lists of upcoming events**
- <img src="https://github.com/russellrockwood/EventWarez/blob/russell/EventWarez.WebAPI/Images/createNewShow.jpg" width="867" height="131">
- <img src="https://github.com/russellrockwood/EventWarez/blob/russell/EventWarez.WebAPI/Images/viewUpcomingEvents.jpg" width="267" height="131">
+ <img src="https://github.com/russellrockwood/EventWarez/blob/russell/EventWarez.WebAPI/Images/createNewShow.jpg" width="767" height="131">
+ <img src="https://github.com/russellrockwood/EventWarez/blob/russell/EventWarez.WebAPI/Images/viewUpcomingEvents.jpg" width="217" height="131">
 
 ## Room for Improvement
 
