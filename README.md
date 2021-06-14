@@ -53,7 +53,7 @@ Use your preffered API service tool to send requests. I recommend [Postman](http
  
   <p float="left">
   <img src="https://github.com/russellrockwood/EventWarez/blob/russell/EventWarez.WebAPI/Images/createTicket.jpg" width="250"/>
-  <img src="https://github.com/russellrockwood/EventWarez/blob/russell/EventWarez.WebAPI/Images/AddAttendeeToTicket.jpg" width="250" /> 
+  <img src="https://github.com/russellrockwood/EventWarez/blob/russell/EventWarez.WebAPI/Images/addAttendeeToTicket.jpg" width="250" /> 
 </p>
 
  
