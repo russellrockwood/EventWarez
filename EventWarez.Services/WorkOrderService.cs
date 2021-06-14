@@ -41,7 +41,7 @@ namespace EventWarez.Services
                                 {
                                     WorkOrderId = e.WorkOrderId,
                                     StaffId = e.StaffId,
-                                    IsFilled = e.IsFilled,
+                                    //IsFilled = e.IsFilled,
                                     ShowId = e.ShowId,
                                     Department = e.Department,
                                     CreatedUtc = e.CreatedUtc,
@@ -65,7 +65,7 @@ namespace EventWarez.Services
                     {
                         WorkOrderId = entity.WorkOrderId,
                         StaffId = entity.StaffId,
-                        IsFilled = entity.IsFilled,
+                        //IsFilled = entity.IsFilled,
                         ShowId = entity.ShowId,
                         Department = entity.Department,
                         CreatedUtc = entity.CreatedUtc,
@@ -121,12 +121,13 @@ namespace EventWarez.Services
                 List<WorkOrderDetail> filledOrders = new List<WorkOrderDetail>();
                 foreach (var workOrder in entity)
                 {
-                    if (workOrder.IsFilled)
+                    if (workOrder.StaffId != null)
                     {
                         var filledOrder = new WorkOrderDetail()
                         {
                             WorkOrderId = workOrder.WorkOrderId,
                             ShowId = workOrder.ShowId,
+                            StaffId = workOrder.StaffId,
                             Department = workOrder.Department,
                             CreatedUtc = workOrder.CreatedUtc
                         };
@@ -151,7 +152,7 @@ namespace EventWarez.Services
                 List<WorkOrderDetail> unfilledOrders = new List<WorkOrderDetail>();
                 foreach (var workOrder in entity)
                 {
-                    if (!workOrder.IsFilled)
+                    if (workOrder.StaffId == null)
                     {
                         var unfilledOrder = new WorkOrderDetail()
                         {  

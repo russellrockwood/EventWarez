@@ -90,6 +90,10 @@
     <Compile Include="Migrations\202106131833377_WorkOrderChanges.Designer.cs">
       <DependentUpon>202106131833377_WorkOrderChanges.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106141959095_RemovedWorkOrderProperty.cs" />
+    <Compile Include="Migrations\202106141959095_RemovedWorkOrderProperty.Designer.cs">
+      <DependentUpon>202106141959095_RemovedWorkOrderProperty.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Staff.cs" />
@@ -104,6 +108,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202106131833377_WorkOrderChanges.resx">
       <DependentUpon>202106131833377_WorkOrderChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106141959095_RemovedWorkOrderProperty.resx">
+      <DependentUpon>202106141959095_RemovedWorkOrderProperty.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

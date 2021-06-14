@@ -13,8 +13,6 @@ namespace EventWarez.Models
         public int WorkOrderId { get; set; }
         public int? StaffId { get; set; }
         public int ShowId { get; set; }
-
-        public bool IsFilled { get; set; }
         public Department Department { get; set; }
 
         [Display(Name = "Created")]

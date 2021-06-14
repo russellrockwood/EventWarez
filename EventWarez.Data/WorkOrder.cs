@@ -18,14 +18,6 @@ namespace EventWarez.Data
         public int? StaffId { get; set; }
         public virtual Staff Staff { get; set; }
 
-        public bool IsFilled 
-        {
-            get 
-            {
-                return (StaffId == null) ? false : true;
-            } 
-        }
-
         [Required]
         public int ShowId { get; set; }
         public virtual Show Show { get; set; }
