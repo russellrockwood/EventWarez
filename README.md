@@ -52,8 +52,8 @@ Use your preffered API service tool to send requests. I recommend [Postman](http
  - Create show tickets and add attendees
  
   <p float="left">
-  <img src="https://github.com/russellrockwood/EventWarez/blob/russell/EventWarez.WebAPI/Images/createTicket.jpg" width="250"/>
-  <img src="https://github.com/russellrockwood/EventWarez/blob/russell/EventWarez.WebAPI/Images/addAttendeeToTicket.jpg" width="250" /> 
+  <img src="https://github.com/russellrockwood/EventWarez/blob/russell/EventWarez.WebAPI/Images/createTicket.jpg" width="350"/>
+  <img src="https://github.com/russellrockwood/EventWarez/blob/russell/EventWarez.WebAPI/Images/addAttendeeToTicket.jpg" width="340" /> 
 </p>
 
  
