@@ -1,5 +1,5 @@
 # EventWarez 
-> Provides event professionals with the tools they need to power event success.
+> EventWarez is an event management system that allows you to keep track of shows, ticket sales, attendees and staff.
 ## Table of Contents
 * [General Info](#general-information)
 * [Installation](#installation)
