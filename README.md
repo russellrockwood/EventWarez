@@ -38,8 +38,8 @@ Use your preffered API service tool to send requests. I recommend [Postman](http
 - [dbdiagram.io](https://dbdiagram.io/home) A free, simple tool to draw ER diagrams.
 
 ## Featured Applications
- **Create and view lists of upcoming events**
- <img src="https://github.com/russellrockwood/EventWarez/blob/russell/EventWarez.WebAPI/Images/createNewShow.jpg" width="467" height="331">
+ -**Create and view lists of upcoming events**
+ <img src="https://github.com/russellrockwood/EventWarez/blob/russell/EventWarez.WebAPI/Images/createNewShow.jpg" width="867" height="331">
  <img src="https://github.com/russellrockwood/EventWarez/blob/russell/EventWarez.WebAPI/Images/viewUpcomingEvents.jpg" width="467" height="331">
 
 ## Room for Improvement
