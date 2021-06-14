@@ -56,6 +56,6 @@ The following features can be further expanded upon to increase functionality of
 
 
 ## Collaborators
--Ryan Dibble dibzthedibz@gmail.com
--Samuel Perry  snperry89@gmail.com 
--Russell Rockwood  russell.rockwood@gmail.com
+- Ryan Dibble dibzthedibz@gmail.com
+- Samuel Perry  snperry89@gmail.com 
+- Russell Rockwood  russell.rockwood@gmail.com
