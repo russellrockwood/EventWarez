@@ -55,7 +55,7 @@ Use your preffered API service tool to send requests. I recommend [Postman](http
 
  - View tickets by show
  
- <img src="https://github.com/russellrockwood/EventWarez/blob/russell/EventWarez.WebAPI/Images/viewTicketByShowId.jpg" width="500" /> 
+ <img src="https://github.com/russellrockwood/EventWarez/blob/russell/EventWarez.WebAPI/Images/viewTicketsByShowId.jpg" width="500" /> 
 
 ## Room for Improvement
 
