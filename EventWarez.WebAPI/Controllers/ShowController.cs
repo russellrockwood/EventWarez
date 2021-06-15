@@ -8,7 +8,11 @@ using System.Web.Http;
 
 namespace EventWarez.WebAPI.Controllers
 {
+    /// <summary>
+    /// Access to Venue-Side Functionality
+    /// </summary>
     [Authorize]
+    
     public class ShowController : ApiController
     {
         private TicketService CreateTickService()
@@ -22,6 +26,11 @@ namespace EventWarez.WebAPI.Controllers
             return showService;
         }
 
+        /// <summary>
+        /// Allows User to Post a new Show Object to the database
+        /// </summary>
+        /// <param name="show">Takes in show properties and adds them to the database.</param>
+        /// <returns>Success Message</returns>
         [HttpPost]
         public IHttpActionResult Post(ShowCreate show)
         {
@@ -33,8 +42,12 @@ namespace EventWarez.WebAPI.Controllers
             if (!service.CreateShow(show))
                 return InternalServerError();
 
-            return Ok();
+            return Ok("Show Successfully Added!");
         }
+        /// <summary>
+        /// Return a List of All Shows
+        /// </summary>
+        /// <returns>All Current Shows in Database.</returns>
         [HttpGet]
         public IHttpActionResult Get()
         {
@@ -42,6 +55,11 @@ namespace EventWarez.WebAPI.Controllers
             var shows = showService.GetShows();
             return Ok(shows);
         }
+        /// <summary>
+        /// Returns one show by ShowId
+        /// </summary>
+        /// <param name="id">Takes a ShowId number as a URI parameter, and returns that object.</param>
+        /// <returns>Show associated with Id input.</returns>
         [HttpGet]
         public IHttpActionResult Get(int id)
         {
@@ -49,7 +67,11 @@ namespace EventWarez.WebAPI.Controllers
             var show = showService.GetShowById(id);
             return Ok(show);
         }
-
+        /// <summary>
+        /// Allows user to update the ShowTime/Feature properties of an existing show object.
+        /// </summary>
+        /// <param name="show">Takes in new Showtime/Feature information for update.</param>
+        /// <returns>Success Message.</returns>
         [HttpPut]
         public IHttpActionResult Put(ShowEdit show)
         {
@@ -63,7 +85,11 @@ namespace EventWarez.WebAPI.Controllers
 
             return Ok("Show Successfully Updated");
         }
-
+        /// <summary>
+        /// Allows user to add individual tickets to a show object.
+        /// </summary>
+        /// <param name="model">Takes in all ticket properties and adds them as an object to the database.</param>
+        /// <returns>Success Message.</returns>
         [HttpPost]
         [Route("api/Show/Ticket")]
         public IHttpActionResult AddTicketsToShow(TicketCreate model)
@@ -75,9 +101,13 @@ namespace EventWarez.WebAPI.Controllers
 
             if (!service.CreateTicket(model))
                 return InternalServerError();
-            return Ok("Ticket Successfully Added To Show");
+            return Ok("Ticket Successfully Added To Show!");
         }
-
+        /// <summary>
+        /// Returns a list of all tickets by Show Id
+        /// </summary>
+        /// <param name="showId">Takes a Show Id in as a URI parameter, and returns all ticket objects attached to that show.</param>
+        /// <returns>All tickets associated with Show Id input..</returns>
         [HttpGet]
         [Route("api/Show/Ticket")]
         public IHttpActionResult GetTicketsByShow(int showId)
@@ -87,7 +117,11 @@ namespace EventWarez.WebAPI.Controllers
             var ticket = tickService.GetTicketByShow(showId);
             return Ok(ticket);
         }
-
+        /// <summary>
+        /// Deletes a Show Object from the Show Database
+        /// </summary>
+        /// <param name="id">Takes in a ShowId as a URI parameter, and deletes the object from the database.</param>
+        /// <returns>Success Message.</returns>
         [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
@@ -100,7 +134,11 @@ namespace EventWarez.WebAPI.Controllers
                 return Ok("Show Successfully Deleted");
             }
         }
-
+        /// <summary>
+        /// Create a New Work Order to be filled.
+        /// </summary>
+        /// <param name="workOrder">Takes in a Work Order by the Parameters in the Body, and Adds the New Object to the Database</param>
+        /// <returns>Success Message.</returns>
         [HttpPost]
         [Route("api/Show/WorkOrder")]
         public IHttpActionResult PostWorkOrder(WorkOrderCreate workOrder)
@@ -115,16 +153,37 @@ namespace EventWarez.WebAPI.Controllers
 
             return Ok("Work Order Created");
         }
-
+        /// <summary>
+        /// Returns a List of ALL Work Orders
+        /// </summary>
+        /// <returns>Full List of All Current Work Orders in System.</returns>
         [HttpGet]
         [Route("api/Show/WorkOrder")]
-        //public IHttpActionResult GetWorkOrders()
-        //[Route("api/WorkOrder")]
         public IHttpActionResult GetAllWorkOrders()
         {
             var service = new WorkOrderService();
-            var workOrders = service.GetWorkOrders();
+            var workOrders = service.GetAllWorkOrders();
             return Ok(workOrders);
+        }
+        /// <summary>
+        /// Returns a single Work Order.
+        /// </summary>
+        /// <param name="id">Takes in a WorkOrderId as a URI Parameter, and Returns That Object.</param>
+        /// <returns>Returns Work Order Associated with Id input.</returns>
+        [HttpGet]
+        [Route("api/Show/FilledWorkOrders/{showId}")]
+        public IHttpActionResult GetStaffRoster(int showId)
+        {
+            var service = new WorkOrderService();
+            return Ok(service.GetFilledWorkOrders(showId));
+        }
+
+        [HttpGet]
+        [Route("api/Show/UnfilledWorkOrders/{showId}")]
+        public IHttpActionResult GetOpenWorkOrders(int showId)
+        {
+            var service = new WorkOrderService();
+            return Ok(service.GetUnfilledWorkOrders(showId));
         }
 
         [HttpGet]
@@ -135,7 +194,11 @@ namespace EventWarez.WebAPI.Controllers
             var workOrders = service.GetWorkOrder(id);
             return Ok(workOrders);
         }
-
+        /// <summary>
+        /// Allows a User to Alter the Details of an Existing Work Order Object.
+        /// </summary>
+        /// <param name="workOrderEdit">Takes in the parameters defined in the body, and updates that Work Order Object in the Database.</param>
+        /// <returns>Success Message.</returns>
         [HttpPut]
         [Route("api/Show/WorkOrder")]
         public IHttpActionResult UpdateWorkOrder(WorkOrderEdit workOrderEdit)
@@ -151,6 +214,25 @@ namespace EventWarez.WebAPI.Controllers
             return Ok("Work Order Updated");
         }
 
+        [HttpPut]
+        [Route("api/Show/FillWorkOrder")]
+        public IHttpActionResult FillWorkOrder(WorkOrderAssign assignmentInfo)
+        {
+            var service = new WorkOrderService();
+
+            if (!service.AddStaffToWorkOrder(assignmentInfo))
+            {
+                return InternalServerError();
+            }
+
+            return Ok("Employee added to work order");
+        }
+
+        /// <summary>
+        /// Deletes a Work Order Object.
+        /// </summary>
+        /// <param name="id">Takes in a WorkOrderId as a URI Parameter, and Deletes that Object from the Database.</param>
+        /// <returns>Success Message.</returns>
         [HttpDelete]
         [Route("api/Show/WorkOrder")]
         public IHttpActionResult DeleteWorkOrder(int id)
@@ -160,25 +242,6 @@ namespace EventWarez.WebAPI.Controllers
                 return InternalServerError();
 
             return Ok("Work Order Deleted");
-        }
-
-
-        ///
-        [HttpPut]
-        [Route("api/Show/SellOut")]
-        public IHttpActionResult SellOutTickets(int showId)
-        {
-            var service = CreateShowService();
-
-            if (!service.SellOut(showId))
-                return InternalServerError();
-
-            return Ok($"Tickets are sold out to Show: {showId}");
-            
-        }
-
-
+        } 
     }
-
-
 }

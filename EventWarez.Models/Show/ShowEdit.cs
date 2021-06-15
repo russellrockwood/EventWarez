@@ -9,7 +9,7 @@ namespace EventWarez.Models.Show
 {
     public class ShowEdit
     {
-        [Required] // Shouldnt be needed
+        [Required] 
         public int ShowId { get; set; }
 
         public string Feature { get; set; }

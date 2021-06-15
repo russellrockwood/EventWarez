@@ -86,13 +86,13 @@
   <ItemGroup>
     <Compile Include="Attendee.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202106092058389_migrate.cs" />
-    <Compile Include="Migrations\202106092058389_migrate.Designer.cs">
-      <DependentUpon>202106092058389_migrate.cs</DependentUpon>
-	</Compile>
-	<Compile Include="Migrations\202106101902520_DepartmentChanges.cs" />
-    <Compile Include="Migrations\202106101902520_DepartmentChanges.Designer.cs">
-      <DependentUpon>202106101902520_DepartmentChanges.cs</DependentUpon>
+    <Compile Include="Migrations\202106151503552_FinalMigration.cs" />
+    <Compile Include="Migrations\202106151503552_FinalMigration.Designer.cs">
+      <DependentUpon>202106151503552_FinalMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106151512101_ActualFinalMigration.cs" />
+    <Compile Include="Migrations\202106151512101_ActualFinalMigration.Designer.cs">
+      <DependentUpon>202106151512101_ActualFinalMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,11 +106,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202106092058389_migrate.resx">
-      <DependentUpon>202106092058389_migrate.cs</DependentUpon>
-	</EmbeddedResource>
-	<EmbeddedResource Include="Migrations\202106101902520_DepartmentChanges.resx">
-      <DependentUpon>202106101902520_DepartmentChanges.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106151503552_FinalMigration.resx">
+      <DependentUpon>202106151503552_FinalMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106151512101_ActualFinalMigration.resx">
+      <DependentUpon>202106151512101_ActualFinalMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

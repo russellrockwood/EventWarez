@@ -14,7 +14,5 @@ namespace EventWarez.Models.Show
 
         public DateTime ShowTime { get; set; }
 
-        ///
-        public bool IsSoldOut { get; set; }
     }
 }
