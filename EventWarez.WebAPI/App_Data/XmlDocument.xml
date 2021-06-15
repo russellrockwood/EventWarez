@@ -660,14 +660,14 @@
         </member>
         <member name="M:EventWarez.WebAPI.Controllers.WorkOrderController.GetStaffRoster(System.Int32)">
             <summary>
-            Returns a single Work Order.
+            Returns a list of work orders associated with a specific show that HAVE been assigned a Staff Member.
             </summary>
-            <param name="id">Takes in a WorkOrderId as a URI Parameter, and Returns That Object.</param>
-            <returns>Returns Work Order Associated with Id input.</returns>
+            <param name="showId">Takes in a ShowId as a URI Parameter, and Returns That Object.</param>
+            <returns>Returns Work Orders Associated with Id input.</returns>
         </member>
         <member name="M:EventWarez.WebAPI.Controllers.WorkOrderController.GetOpenWorkOrders(System.Int32)">
             <summary>
-            Returns a list of Work Orders that have not yet been assigned a Staff Member.
+            Returns a list of work orders associated with a specific show that have not yet been assigned a Staff Member.
             </summary>
             <param name="showId">Takes in a showID as a URI parameter.</param>
             <returns>Appropriate Work Order Rows.</returns>

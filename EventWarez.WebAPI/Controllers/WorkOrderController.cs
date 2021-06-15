@@ -41,10 +41,11 @@ namespace EventWarez.WebAPI.Controllers
             return Ok(workOrders);
         }
         /// <summary>
-        /// Returns a single Work Order.
+        /// Returns a list of work orders associated with a specific show that HAVE been assigned a Staff Member.
         /// </summary>
-        /// <param name="id">Takes in a WorkOrderId as a URI Parameter, and Returns That Object.</param>
-        /// <returns>Returns Work Order Associated with Id input.</returns>
+        /// <param name="showId">Takes in a ShowId as a URI Parameter, and Returns That Object.</param>
+        /// <returns>Returns Work Orders Associated with Id input.</returns>
+        [Route("api/GetClosedWorkOrders")]
         [HttpGet]
         public IHttpActionResult GetStaffRoster(int showId)
         {
@@ -52,16 +53,18 @@ namespace EventWarez.WebAPI.Controllers
             return Ok(service.GetFilledWorkOrders(showId));
         }
         /// <summary>
-        /// Returns a list of Work Orders that have not yet been assigned a Staff Member.
+        /// Returns a list of work orders associated with a specific show that have not yet been assigned a Staff Member.
         /// </summary>
         /// <param name="showId">Takes in a showID as a URI parameter.</param>
         /// <returns>Appropriate Work Order Rows.</returns>
+        [Route("api/GetOpenWorkOrders")]
         [HttpGet]
         public IHttpActionResult GetOpenWorkOrders(int showId)
         {
             var service = new WorkOrderService();
             return Ok(service.GetUnfilledWorkOrders(showId));
         }
+       
         /// <summary>
         /// Allows the user to search for a specific work order.
         /// </summary>
