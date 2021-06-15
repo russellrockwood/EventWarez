@@ -86,6 +86,13 @@
   <ItemGroup>
     <Compile Include="Attendee.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202106131833377_WorkOrderChanges.cs" />
+    <Compile Include="Migrations\202106131833377_WorkOrderChanges.Designer.cs">
+      <DependentUpon>202106131833377_WorkOrderChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106141959095_RemovedWorkOrderProperty.cs" />
+    <Compile Include="Migrations\202106141959095_RemovedWorkOrderProperty.Designer.cs">
+      <DependentUpon>202106141959095_RemovedWorkOrderProperty.cs</DependentUpon>
     <Compile Include="Migrations\202106111748135_atfu.cs" />
     <Compile Include="Migrations\202106111748135_atfu.Designer.cs">
       <DependentUpon>202106111748135_atfu.cs</DependentUpon>
@@ -102,6 +109,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\202106131833377_WorkOrderChanges.resx">
+      <DependentUpon>202106131833377_WorkOrderChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106141959095_RemovedWorkOrderProperty.resx">
+      <DependentUpon>202106141959095_RemovedWorkOrderProperty.cs</DependentUpon>
     <EmbeddedResource Include="Migrations\202106111748135_atfu.resx">
       <DependentUpon>202106111748135_atfu.cs</DependentUpon>
     </EmbeddedResource>

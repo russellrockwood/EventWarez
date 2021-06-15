@@ -162,7 +162,7 @@ namespace EventWarez.WebAPI.Controllers
         public IHttpActionResult GetAllWorkOrders()
         {
             var service = new WorkOrderService();
-            var workOrders = service.GetWorkOrders();
+            var workOrders = service.GetAllWorkOrders();
             return Ok(workOrders);
         }
         /// <summary>
@@ -170,6 +170,22 @@ namespace EventWarez.WebAPI.Controllers
         /// </summary>
         /// <param name="id">Takes in a WorkOrderId as a URI Parameter, and Returns That Object.</param>
         /// <returns>Returns Work Order Associated with Id input.</returns>
+        [HttpGet]
+        [Route("api/Show/FilledWorkOrders/{showId}")]
+        public IHttpActionResult GetStaffRoster(int showId)
+        {
+            var service = new WorkOrderService();
+            return Ok(service.GetFilledWorkOrders(showId));
+        }
+
+        [HttpGet]
+        [Route("api/Show/UnfilledWorkOrders/{showId}")]
+        public IHttpActionResult GetOpenWorkOrders(int showId)
+        {
+            var service = new WorkOrderService();
+            return Ok(service.GetUnfilledWorkOrders(showId));
+        }
+
         [HttpGet]
         [Route("api/WorkOrder/{id}")]
         public IHttpActionResult GetSingleWorkOrder(int id)
@@ -197,6 +213,21 @@ namespace EventWarez.WebAPI.Controllers
 
             return Ok("Work Order Updated");
         }
+
+        [HttpPut]
+        [Route("api/Show/FillWorkOrder")]
+        public IHttpActionResult FillWorkOrder(WorkOrderAssign assignmentInfo)
+        {
+            var service = new WorkOrderService();
+
+            if (!service.AddStaffToWorkOrder(assignmentInfo))
+            {
+                return InternalServerError();
+            }
+
+            return Ok("Employee added to work order");
+        }
+
         /// <summary>
         /// Deletes a Work Order Object.
         /// </summary>
@@ -211,6 +242,19 @@ namespace EventWarez.WebAPI.Controllers
                 return InternalServerError();
 
             return Ok("Work Order Deleted");
+        }
+
+        [HttpPut]
+        [Route("api/Show/SellOut")]
+        public IHttpActionResult SellOutTickets(int showId)
+        {
+            var service = CreateShowService();
+
+            if (!service.SellOut(showId))
+                return InternalServerError();
+
+            return Ok($"Tickets are sold out to Show: {showId}");
+            
         }
     }
 }
