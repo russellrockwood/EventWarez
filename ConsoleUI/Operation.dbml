@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="EventWarez" Class="OperationDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=EventWarez;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" SettingsObjectName="ConsoleUI.Properties.Settings" SettingsPropertyName="EventWarezConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Attendee" Member="Attendees">
+    <Type Name="Attendee">
+      <Column Name="AttId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Attendee_Ticket" Member="Tickets" ThisKey="AttId" OtherKey="AttId" Type="Ticket" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Show" Member="Shows">
+    <Type Name="Show">
+      <Column Name="ShowId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Feature" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ShowTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsSoldOut" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Show_Ticket" Member="Tickets" ThisKey="ShowId" OtherKey="ShowId" Type="Ticket" />
+      <Association Name="Show_WorkOrder" Member="WorkOrders" ThisKey="ShowId" OtherKey="ShowId" Type="WorkOrder" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Staff" Member="Staffs">
+    <Type Name="Staff">
+      <Column Name="StaffId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="AccessLevel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Staff_WorkOrder" Member="WorkOrders" ThisKey="StaffId" OtherKey="StaffId" Type="WorkOrder" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ticket" Member="Tickets">
+    <Type Name="Ticket">
+      <Column Name="TicketId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ShowId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AttId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Price" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TypeOfTicket" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Attendee_Ticket" Member="Attendee" ThisKey="AttId" OtherKey="AttId" Type="Attendee" IsForeignKey="true" />
+      <Association Name="Show_Ticket" Member="Show" ThisKey="ShowId" OtherKey="ShowId" Type="Show" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WorkOrder" Member="WorkOrders">
+    <Type Name="WorkOrder">
+      <Column Name="WorkOrderId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StaffId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ShowId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedUtc" Type="System.DateTimeOffset" DbType="DateTimeOffset NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedUtc" Type="System.DateTimeOffset" DbType="DateTimeOffset" CanBeNull="true" />
+      <Column Name="Department" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Show_WorkOrder" Member="Show" ThisKey="ShowId" OtherKey="ShowId" Type="Show" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Staff_WorkOrder" Member="Staff" ThisKey="StaffId" OtherKey="StaffId" Type="Staff" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+</Database>
