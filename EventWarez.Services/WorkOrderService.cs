@@ -41,8 +41,6 @@ namespace EventWarez.Services
                                     WorkOrderId = e.WorkOrderId,
                                     StaffId = e.StaffId,
                                     ShowId = e.ShowId,
-                                    StaffId = e.Staff.StaffId,
-                                    ShowId = e.ShowId,  
                                     Department = e.Department,
                                     CreatedUtc = e.CreatedUtc,
                                     ModifiedUtc = e.ModifiedUtc
@@ -64,8 +62,7 @@ namespace EventWarez.Services
                     new WorkOrderDetail
                     {
                         WorkOrderId = entity.WorkOrderId,
-                        StaffId = entity.StaffId,
-                        StaffId = entity.Staff.StaffId,
+                        StaffId = entity.StaffId,                        
                         ShowId = entity.ShowId,
                         Department = entity.Department,
                         CreatedUtc = entity.CreatedUtc,
@@ -154,7 +151,7 @@ namespace EventWarez.Services
                     if (workOrder.StaffId == null)
                     {
                         var unfilledOrder = new WorkOrderDetail()
-                        {  
+                        {
                             WorkOrderId = workOrder.WorkOrderId,
                             ShowId = workOrder.ShowId,
                             Department = workOrder.Department,
