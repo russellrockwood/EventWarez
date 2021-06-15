@@ -16,9 +16,9 @@
 {
     <p>@controllerDocumentation</p>
 }
-<table class="help-page-table">
+<table class="help-page-table table-hover">
     <thead>
-        <tr><th>API</th><th>Description</th></tr>
+        <tr><th>Endpoints</th><th>Description</th></tr>
     </thead>
     <tbody>
     @foreach (var api in Model)
@@ -32,7 +32,7 @@
             }
             else
             {
-                <p>No documentation available.</p>
+                <p></p>
             }
             </td>
         </tr>

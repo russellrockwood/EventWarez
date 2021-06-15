@@ -1,11 +1,11 @@
-.help-page h1,
+ .help-page h1,
 .help-page .h1,
 .help-page h2,
 .help-page .h2,
 .help-page h3,
 .help-page .h3,
 #body.help-page,
-.help-page-table th,
+.help-page-table th
 .help-page-table pre,
 .help-page-table p {
     font-family: "Segoe UI Light", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
@@ -35,15 +35,15 @@
 }
 
 .help-page-table th {
-    text-align: left;
+    left: 50px;
     font-weight: bold;
     border-bottom: 1px solid #D4D4D4;
-    padding: 5px 6px 5px 6px;
+    padding: 5px 6px 15px 16px;
 }
 
 .help-page-table td {
     border-bottom: 1px solid #D4D4D4;
-    padding: 10px 8px 10px 8px;
+    padding: 10px 8px 10px 18px;
     vertical-align: top;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .help-page-table tbody tr:hover td {
-    background-color: #F3F3F3;
+    background-color: #767676;
 }
 
 .help-page a:hover {
@@ -77,17 +77,19 @@
     display: block;
     border-width: 0;
     padding: 15px 20px;
-    background: #FFFFFF;
+    background: #333;
     border: 2px solid #D4D4D4;
     margin: 0px 0px 10px 0px;
 }
 
 .help-page .api-name {
     width: 40%;
+    left: 25px;
 }
 
 .help-page .api-documentation {
     width: 60%;
+    left: 25px;
 }
 
 .help-page .parameter-name {
@@ -106,15 +108,18 @@
     width: 20%;
 }
 
+
 .help-page h1,
 .help-page .h1 {
-    font-size: 36px;
+    font-size: 64px;
+    text-align: center;
     line-height: normal;
 }
 
 .help-page h2,
 .help-page .h2 {
-    font-size: 24px;
+    font-size: 48px;
+    text-align: center;
 }
 
 .help-page h3,
@@ -123,12 +128,17 @@
 }
 
 #body.help-page {
-    font-size: 14px;
+    font-size: 36px;
+    font: bold;
     line-height: 143%;
-    color: #333;
+    color: black;
+    text-align: center;
+    background-color: lightblue;
 }
 
 .help-page a {
-    color: #0000EE;
+    color: darkblue;
     text-decoration: none;
 }
+
+

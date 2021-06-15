@@ -14,5 +14,6 @@ namespace EventWarez.WebAPI
         {
             ConfigureAuth(app);
         }
+
     }
 }

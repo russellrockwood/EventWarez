@@ -481,32 +481,158 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="M:EventWarez.WebAPI.Controllers.AccountController.GetManageInfo(System.String,System.Boolean)">
+            <summary>
+            Returns a List of Users.
+            </summary>
+            <param name="returnUrl"></param>
+            <param name="generateState"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EventWarez.WebAPI.Controllers.AccountController.Register(EventWarez.WebAPI.Models.RegisterBindingModel)">
+            <summary>
+            Registers a New User Account by Username and Password.
+            </summary>
+            <param name="model">Must Enter Password Twice for Confirmation. Information must go BETWEEN the quotes, do not delete them.</param>
+            <returns></returns>
+        </member>
         <member name="M:EventWarez.WebAPI.Controllers.AttendeeController.PostAttendee(EventWarez.Models.Attendee.AttendeeCreate)">
             <summary>
             Create a new Attendee Row
             </summary>
             <param name="att">This Endpoint Creates an Entirely new Attendee Row in the Attendee Database.</param>
-            <returns></returns>
+            <returns>Success Message.</returns>
         </member>
         <member name="M:EventWarez.WebAPI.Controllers.AttendeeController.GetAttendeesFull">
             <summary>
             Returns Full List of all Existing Attendees
             </summary>
-            <returns></returns>
+            <returns>All current Attendee Rows.</returns>
         </member>
-        <member name="M:EventWarez.WebAPI.Controllers.AttendeeController.PurchaseTicket(EventWarez.Models.Ticket.TicketEdit)">
+        <member name="M:EventWarez.WebAPI.Controllers.AttendeeController.DeleteAttendee(System.Int32)">
+            <summary>
+            Use to Remove an attendee row from the Database
+            </summary>
+            <param name="attId">Takes an Attendee Id as a URI parameter</param>
+            <returns>Success Message.</returns>
+        </member>
+        <member name="T:EventWarez.WebAPI.Controllers.StaffController">
+            <summary>
+            Access to Staff-Side Functionality.
+            </summary>
+        </member>
+        <member name="M:EventWarez.WebAPI.Controllers.StaffController.Post(EventWarez.Models.Staff.StaffCreate)">
+            <summary>
+            Creates a New Staff Member
+            </summary>
+            <param name="staff">Takes in a Staff Object by the Parameters Defined in the Body, and Adds the New Object to the Database.</param>
+            <returns>Success Message.</returns>
+        </member>
+        <member name="M:EventWarez.WebAPI.Controllers.StaffController.Get">
+            <summary>
+            Returns a List of All Staff Members.
+            </summary>
+            <returns>All current Staff Members in Database.</returns>
+        </member>
+        <member name="M:EventWarez.WebAPI.Controllers.StaffController.Get(System.Int32)">
+            <summary>
+            Returns a single Staff Member.
+            </summary>
+            <param name="id">Takes in a StaffId as a URI Parameter, and returns that Object.</param>
+            <returns>Staff Member associated with Id input.</returns>
+        </member>
+        <member name="M:EventWarez.WebAPI.Controllers.StaffController.Put(EventWarez.Models.Staff.StaffEdit)">
+            <summary>
+            Use to Update an Existing Staff Member.
+            </summary>
+            <param name="staff">Takes in a Model of the Staff Object, as Defined by Body Parameters, and Updates that Object in the DataBase</param>
+            <returns>Success Message.</returns>
+        </member>
+        <member name="M:EventWarez.WebAPI.Controllers.StaffController.Delete(System.Int32)">
+            <summary>
+            Use to Delete a Staff Member From the Database.
+            </summary>
+            <param name="id">Takes in a StaffId as a URI Parameter, and Deletes that Object from the DataBase.</param>
+            <returns>Success Message.</returns>
+        </member>
+        <member name="T:EventWarez.WebAPI.Controllers.ShowController">
+            <summary>
+            Access to Venue-Side Functionality
+            </summary>
+        </member>
+        <member name="M:EventWarez.WebAPI.Controllers.ShowController.Post(EventWarez.Models.Show.ShowCreate)">
+            <summary>
+            Allows User to Post a new Show Object to the database
+            </summary>
+            <param name="show">Takes in show properties and adds them to the database.</param>
+            <returns>Success Message</returns>
+        </member>
+        <member name="M:EventWarez.WebAPI.Controllers.ShowController.Get">
+            <summary>
+            Return a List of All Shows
+            </summary>
+            <returns>All Current Shows in Database.</returns>
+        </member>
+        <member name="M:EventWarez.WebAPI.Controllers.ShowController.Get(System.Int32)">
+            <summary>
+            Returns one show by ShowId
+            </summary>
+            <param name="id">Takes a ShowId number as a URI parameter, and returns that object.</param>
+            <returns>Show associated with Id input.</returns>
+        </member>
+        <member name="M:EventWarez.WebAPI.Controllers.ShowController.Put(EventWarez.Models.Show.ShowEdit)">
+            <summary>
+            Allows user to update the ShowTime/Feature properties of an existing show object.
+            </summary>
+            <param name="show">Takes in new Showtime/Feature information for update.</param>
+            <returns>Success Message.</returns>
+        </member>
+        <member name="M:EventWarez.WebAPI.Controllers.ShowController.Delete(System.Int32)">
+            <summary>
+            Deletes a Show Object from the Show Database
+            </summary>
+            <param name="id">Takes in a ShowId as a URI parameter, and deletes the object from the database.</param>
+            <returns>Success Message.</returns>
+        </member>
+        <member name="F:EventWarez.WebAPI.Controllers.TicketController._attendeeService">
+            <summary>
+            Allows Access to Functions regarding Tickets.
+            </summary>
+        </member>
+        <member name="M:EventWarez.WebAPI.Controllers.TicketController.AddTicketsToShow(EventWarez.Models.Ticket.TicketCreate)">
+            <summary>
+            Allows user to add individual tickets to a show object.
+            </summary>
+            <param name="model">Takes in all ticket properties and adds them as an object to the database.</param>
+            <returns>Success Message.</returns>
+        </member>
+        <member name="M:EventWarez.WebAPI.Controllers.TicketController.GetTicketsByShow(System.Int32)">
+            <summary>
+            Returns a list of all tickets by Show Id
+            </summary>
+            <param name="showId">Takes a Show Id in as a URI parameter, and returns all ticket objects attached to that show.</param>
+            <returns>All tickets associated with Show Id input..</returns>
+        </member>
+        <member name="M:EventWarez.WebAPI.Controllers.TicketController.PurchaseTicket(EventWarez.Models.Ticket.TicketEdit)">
             <summary>
             Allows an Attendee to purchase a ticket
             </summary>
-            <param name="ticket">Takes in a Ticket object, defined in the body by Id #, and adds the appropriate Attendee Id to that ticket, removing that ticket from the database.</param>
-            <returns></returns>
+            <param name="ticket">Takes in a Ticket object, defined in the body by Id #, and adds the appropriate Attendee Id to that ticket.</param>
+            <returns>Success Message.</returns>
         </member>
-        <member name="M:EventWarez.WebAPI.Controllers.AttendeeController.GetTicketsByAttendee(System.Int32)">
+        <member name="M:EventWarez.WebAPI.Controllers.TicketController.GetTicketsByAttendee(System.Int32)">
             <summary>
             Returns List of Tickets By Attendee Id.
             </summary>
             <param name="attId">Insert an Attendee Id into the uri arguments, and return a list of relevant tickets.</param>
-            <returns></returns>
+            <returns>Attendee associated with Id input.</returns>
+        </member>
+        <member name="M:EventWarez.WebAPI.Controllers.TicketController.DeleteTicket(System.Int32)">
+            <summary>
+            Use to Remove an Ticket row from the Database
+            </summary>
+            <param name="tickId">Takes a Ticket Id as a URI parameter</param>
+            <returns>Success Message.</returns>
         </member>
         <member name="M:EventWarez.WebAPI.Controllers.ValuesController.Get">
             <summary>
@@ -518,6 +644,73 @@
             Looks up some data by ID.
             </summary>
             <param name="id">The ID of the data.</param>
+        </member>
+        <member name="M:EventWarez.WebAPI.Controllers.WorkOrderController.PostWorkOrder(EventWarez.Models.WorkOrderCreate)">
+            <summary>
+            Create a New Work Order to be filled.
+            </summary>
+            <param name="workOrder">Takes in a Work Order by the Parameters in the Body, and Adds the New Object to the Database</param>
+            <returns>Success Message.</returns>
+        </member>
+        <member name="M:EventWarez.WebAPI.Controllers.WorkOrderController.GetAllWorkOrders">
+            <summary>
+            Returns a List of ALL Work Orders
+            </summary>
+            <returns>Full List of All Current Work Orders in System.</returns>
+        </member>
+        <member name="M:EventWarez.WebAPI.Controllers.WorkOrderController.GetStaffRoster(System.Int32)">
+            <summary>
+            Returns a single Work Order.
+            </summary>
+            <param name="id">Takes in a WorkOrderId as a URI Parameter, and Returns That Object.</param>
+            <returns>Returns Work Order Associated with Id input.</returns>
+        </member>
+        <member name="M:EventWarez.WebAPI.Controllers.WorkOrderController.GetOpenWorkOrders(System.Int32)">
+            <summary>
+            Returns a list of Work Orders that have not yet been assigned a Staff Member.
+            </summary>
+            <param name="showId">Takes in a showID as a URI parameter.</param>
+            <returns>Appropriate Work Order Rows.</returns>
+        </member>
+        <member name="M:EventWarez.WebAPI.Controllers.WorkOrderController.GetSingleWorkOrder(System.Int32)">
+            <summary>
+            Allows the user to search for a specific work order.
+            </summary>
+            <param name="id">Takes in a Work Order Id as at URI parameter.</param>
+            <returns>The Appropriate Datarow.</returns>
+        </member>
+        <member name="M:EventWarez.WebAPI.Controllers.WorkOrderController.UpdateWorkOrder(EventWarez.Models.WorkOrderEdit)">
+            <summary>
+            Allows a User to Alter the Details of an Existing Work Order Object.
+            </summary>
+            <param name="workOrderEdit">Takes in the parameters defined in the body, and updates that Work Order Object in the Database.</param>
+            <returns>Success Message.</returns>
+        </member>
+        <member name="M:EventWarez.WebAPI.Controllers.WorkOrderController.FillWorkOrder(EventWarez.Models.WorkOrderAssign)">
+            <summary>
+            Allows the User to assign a Staff Member to an Open Work Order.
+            </summary>
+            <param name="assignmentInfo">Takes in a WorkOrderId and a Staff Id in the body.</param>
+            <returns>Success Message</returns>
+        </member>
+        <member name="M:EventWarez.WebAPI.Controllers.WorkOrderController.DeleteWorkOrder(System.Int32)">
+            <summary>
+            Deletes a Work Order Object.
+            </summary>
+            <param name="id">Takes in a WorkOrderId as a URI Parameter, and Deletes that Object from the Database.</param>
+            <returns>Success Message.</returns>
+        </member>
+        <member name="T:DibzNote.WebAPI.AddAuthorizationHeaderParameterOperationFilter">
+            <summary>
+            Document filter for adding Authorization header in Swashbuckle / Swagger.
+            </summary>
+        </member>
+        <member name="T:DibzNote.WebAPI.AuthTokenEndpointOperation">
+            <summary>
+            Document filter for adding OAuth Token endpoint documentation in Swashbuckle / Swagger.
+            
+            Swagger normally won't find it = the /token endpoint - due to it being programmatically generated.
+            </summary>
         </member>
     </members>
 </doc>

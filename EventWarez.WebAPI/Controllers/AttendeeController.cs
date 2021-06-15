@@ -12,6 +12,10 @@ using System.Web.Http;
 
 namespace EventWarez.WebAPI.Controllers
 {
+    [Authorize]
+    /// <summary>
+    /// Allows Access to All Attendee-Side Functions
+    /// </summary>
     public class AttendeeController : ApiController
     {
         private TicketService CreateTickService()
@@ -21,12 +25,12 @@ namespace EventWarez.WebAPI.Controllers
         }
 
         private AttendeeService _attendeeService = new AttendeeService();
-
+        private TicketService _ticketService = new TicketService();
         /// <summary>
         /// Create a new Attendee Row
         /// </summary>
         /// <param name="att">This Endpoint Creates an Entirely new Attendee Row in the Attendee Database.</param>
-        /// <returns></returns>
+        /// <returns>Success Message.</returns>
         public IHttpActionResult PostAttendee(AttendeeCreate att)
         {
             if (!ModelState.IsValid)
@@ -40,47 +44,30 @@ namespace EventWarez.WebAPI.Controllers
         /// <summary>
         /// Returns Full List of all Existing Attendees
         /// </summary>
-        /// <returns></returns>
+        /// <returns>All current Attendee Rows.</returns>
         public IHttpActionResult GetAttendeesFull()
         {
             var attendees = _attendeeService.GetAttendees();
             return Ok(attendees);
         }
+        
+
         /// <summary>
-        /// Allows an Attendee to purchase a ticket
+        /// Use to Remove an attendee row from the Database
         /// </summary>
-        /// <param name="ticket">Takes in a Ticket object, defined in the body by Id #, and adds the appropriate Attendee Id to that ticket, removing that ticket from the database.</param>
-        /// <returns></returns>
-        [HttpPut]
-        [Route("api/Ticket/Purchase")]
-
-        public IHttpActionResult PurchaseTicket(TicketEdit ticket)
+        /// <param name="attId">Takes an Attendee Id as a URI parameter</param>
+        /// <returns>Success Message.</returns>
+        [Route("api/DeleteAttendee")]
+            public IHttpActionResult DeleteAttendee(int attId)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            var service = CreateTickService();
-
-            //
-            //if (Show.IsSoldOut)
-            //    return BadRequest("Show Sold Out, Unable To Purchase Ticket");
-            //
-            if (!service.AddAttendeeToTicket(ticket))
+            if (!_attendeeService.DeleteAttendee(attId))
+            {
                 return InternalServerError();
+            }
 
-            return Ok("Ticket Successfully Purchased.");
+            return Ok("Successfully Deleted Attendee!");
         }
-        /// <summary>
-        /// Returns List of Tickets By Attendee Id.
-        /// </summary>
-        /// <param name="attId">Insert an Attendee Id into the uri arguments, and return a list of relevant tickets.</param>
-        /// <returns></returns>
-        public IHttpActionResult GetTicketsByAttendee(int attId)
-        {
-            AttendeeService service = new AttendeeService();
-            var attendees = service.GetTicketByAttendee(attId);
-            return Ok(attendees);
-        }
+        
     }
 
 }
