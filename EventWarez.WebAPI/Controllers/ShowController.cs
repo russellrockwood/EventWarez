@@ -190,8 +190,6 @@ namespace EventWarez.WebAPI.Controllers
             return Ok("Work Order Deleted");
         }
 
-
-        ///
         [HttpPut]
         [Route("api/Show/SellOut")]
         public IHttpActionResult SellOutTickets(int showId)
@@ -204,8 +202,5 @@ namespace EventWarez.WebAPI.Controllers
             return Ok($"Tickets are sold out to Show: {showId}");
             
         }
-
     }
-
-
 }

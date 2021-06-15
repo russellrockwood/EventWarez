@@ -109,7 +109,6 @@ namespace EventWarez.Services
 
         public IEnumerable<WorkOrderDetail> GetFilledWorkOrders(int showId)
         {
-
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
