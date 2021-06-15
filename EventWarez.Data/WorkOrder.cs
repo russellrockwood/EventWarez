@@ -21,7 +21,6 @@ namespace EventWarez.Data
         [Required]
         public Department Department { get; set; }
 
-        [Required]
         public DateTimeOffset CreatedUtc { get; set; }
 
         public DateTimeOffset? ModifiedUtc { get; set; }
