@@ -11,13 +11,9 @@ namespace EventWarez.Models
     public class WorkOrderCreate
     {
         [Required]
-        public int StaffId { get; set; }
-
-        [Required]
         public int ShowId { get; set; }
 
         [Required]
         public Department Department { get; set; }
-
     }
 }

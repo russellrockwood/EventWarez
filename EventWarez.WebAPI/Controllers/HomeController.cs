@@ -10,7 +10,7 @@ namespace EventWarez.WebAPI.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "EventWarez Landing Page";
 
             return View();
         }

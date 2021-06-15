@@ -17,6 +17,7 @@ using EventWarez.WebAPI.Models;
 using EventWarez.WebAPI.Providers;
 using EventWarez.WebAPI.Results;
 using EventWarez.Data;
+using System.Web.Http.Description;
 
 namespace EventWarez.WebAPI.Controllers
 {
@@ -53,6 +54,7 @@ namespace EventWarez.WebAPI.Controllers
         public ISecureDataFormat<AuthenticationTicket> AccessTokenFormat { get; private set; }
 
         // GET api/Account/UserInfo
+        [ApiExplorerSettings(IgnoreApi = true)]
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
         [Route("UserInfo")]
         public UserInfoViewModel GetUserInfo()
@@ -69,14 +71,21 @@ namespace EventWarez.WebAPI.Controllers
 
         // POST api/Account/Logout
         [Route("Logout")]
+        [ApiExplorerSettings(IgnoreApi = true)]
         public IHttpActionResult Logout()
         {
             Authentication.SignOut(CookieAuthenticationDefaults.AuthenticationType);
             return Ok();
         }
-
+        /// <summary>
+        /// Returns a List of Users.
+        /// </summary>
+        /// <param name="returnUrl"></param>
+        /// <param name="generateState"></param>
+        /// <returns></returns>
         // GET api/Account/ManageInfo?returnUrl=%2F&generateState=true
         [Route("ManageInfo")]
+        [ApiExplorerSettings(IgnoreApi = true)]
         public async Task<ManageInfoViewModel> GetManageInfo(string returnUrl, bool generateState = false)
         {
             IdentityUser user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
@@ -115,8 +124,9 @@ namespace EventWarez.WebAPI.Controllers
             };
         }
 
-        // POST api/Account/ChangePassword
-        [Route("ChangePassword")]
+        //POST api/Account/ChangePassword
+       [Route("ChangePassword")]
+        [ApiExplorerSettings(IgnoreApi = true)]
         public async Task<IHttpActionResult> ChangePassword(ChangePasswordBindingModel model)
         {
             if (!ModelState.IsValid)
@@ -126,7 +136,7 @@ namespace EventWarez.WebAPI.Controllers
 
             IdentityResult result = await UserManager.ChangePasswordAsync(User.Identity.GetUserId(), model.OldPassword,
                 model.NewPassword);
-            
+
             if (!result.Succeeded)
             {
                 return GetErrorResult(result);
@@ -135,8 +145,9 @@ namespace EventWarez.WebAPI.Controllers
             return Ok();
         }
 
-        // POST api/Account/SetPassword
-        [Route("SetPassword")]
+        //POST api/Account/SetPassword
+       [Route("SetPassword")]
+        [ApiExplorerSettings(IgnoreApi = true)]
         public async Task<IHttpActionResult> SetPassword(SetPasswordBindingModel model)
         {
             if (!ModelState.IsValid)
@@ -154,8 +165,9 @@ namespace EventWarez.WebAPI.Controllers
             return Ok();
         }
 
-        // POST api/Account/AddExternalLogin
-        [Route("AddExternalLogin")]
+        //POST api/Account/AddExternalLogin
+       [Route("AddExternalLogin")]
+        [ApiExplorerSettings(IgnoreApi = true)]
         public async Task<IHttpActionResult> AddExternalLogin(AddExternalLoginBindingModel model)
         {
             if (!ModelState.IsValid)
@@ -193,6 +205,7 @@ namespace EventWarez.WebAPI.Controllers
         }
 
         // POST api/Account/RemoveLogin
+        [ApiExplorerSettings(IgnoreApi = true)]
         [Route("RemoveLogin")]
         public async Task<IHttpActionResult> RemoveLogin(RemoveLoginBindingModel model)
         {
@@ -226,6 +239,7 @@ namespace EventWarez.WebAPI.Controllers
         [HostAuthentication(DefaultAuthenticationTypes.ExternalCookie)]
         [AllowAnonymous]
         [Route("ExternalLogin", Name = "ExternalLogin")]
+        [ApiExplorerSettings(IgnoreApi = true)]
         public async Task<IHttpActionResult> GetExternalLogin(string provider, string error = null)
         {
             if (error != null)
@@ -280,6 +294,7 @@ namespace EventWarez.WebAPI.Controllers
 
         // GET api/Account/ExternalLogins?returnUrl=%2F&generateState=true
         [AllowAnonymous]
+        [ApiExplorerSettings(IgnoreApi = true)]
         [Route("ExternalLogins")]
         public IEnumerable<ExternalLoginViewModel> GetExternalLogins(string returnUrl, bool generateState = false)
         {
@@ -318,7 +333,11 @@ namespace EventWarez.WebAPI.Controllers
 
             return logins;
         }
-
+        /// <summary>
+        /// Registers a New User Account by Username and Password.
+        /// </summary>
+        /// <param name="model">Must Enter Password Twice for Confirmation. Information must go BETWEEN the quotes, do not delete them.</param>
+        /// <returns></returns>
         // POST api/Account/Register
         [AllowAnonymous]
         [Route("Register")]
@@ -344,6 +363,7 @@ namespace EventWarez.WebAPI.Controllers
         // POST api/Account/RegisterExternal
         [OverrideAuthentication]
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
+        [ApiExplorerSettings(IgnoreApi = true)]
         [Route("RegisterExternal")]
         public async Task<IHttpActionResult> RegisterExternal(RegisterExternalBindingModel model)
         {

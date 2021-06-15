@@ -75,6 +75,16 @@ namespace EventWarez.Services
                     };
             }
         }
+        public bool DeleteTicket(int tickId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                ctx.Tickets.Single(e => e.TicketId == tickId);
+                ctx.Tickets.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
 
 
     }
