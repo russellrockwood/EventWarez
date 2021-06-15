@@ -12,9 +12,9 @@ namespace EventWarez.Models
     {
         public int? StaffId { get; set; }
 
+        [Required]
         public int ShowId { get; set; }
 
         public Department Department { get; set; }
-
     }
 }

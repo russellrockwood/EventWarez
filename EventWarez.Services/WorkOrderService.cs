@@ -16,7 +16,6 @@ namespace EventWarez.Services
             var entity =
                 new WorkOrder()
                 {
-                    StaffId = model.StaffId,
                     ShowId = model.ShowId,
                     Department = model.Department,
                     CreatedUtc = DateTime.Now
@@ -41,8 +40,9 @@ namespace EventWarez.Services
                                 {
                                     WorkOrderId = e.WorkOrderId,
                                     StaffId = e.StaffId,
-                                    //IsFilled = e.IsFilled,
                                     ShowId = e.ShowId,
+                                    StaffId = e.Staff.StaffId,
+                                    ShowId = e.ShowId,  
                                     Department = e.Department,
                                     CreatedUtc = e.CreatedUtc,
                                     ModifiedUtc = e.ModifiedUtc
@@ -65,7 +65,7 @@ namespace EventWarez.Services
                     {
                         WorkOrderId = entity.WorkOrderId,
                         StaffId = entity.StaffId,
-                        //IsFilled = entity.IsFilled,
+                        StaffId = entity.Staff.StaffId,
                         ShowId = entity.ShowId,
                         Department = entity.Department,
                         CreatedUtc = entity.CreatedUtc,

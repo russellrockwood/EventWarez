@@ -67,11 +67,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EventWarez.Data\EventWarez.Data.csproj">
-      <Project>{55E21481-2A38-4FA4-9842-0387F012682C}</Project>
+      <Project>{55e21481-2a38-4fa4-9842-0387f012682c}</Project>
       <Name>EventWarez.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\EventWarez.Models\EventWarez.Models.csproj">
-      <Project>{0A079EBE-3ABC-4FB8-8EA1-B2CAB56B8544}</Project>
+      <Project>{0a079ebe-3abc-4fb8-8ea1-b2cab56b8544}</Project>
       <Name>EventWarez.Models</Name>
     </ProjectReference>
   </ItemGroup>

@@ -54,13 +54,23 @@ namespace EventWarez.Services
                     .Select(e => new TicketListItem()
                     {
                         TicketId = e.TicketId,
-                        Price=e.Price,
-                        TypeTicket=e.TypeOfTicket,
-                        Feature=e.Show.Feature,
-                        ShowTime=e.Show.ShowTime
+                        Price = e.Price,
+                        TypeTicket = e.TypeOfTicket,
+                        Feature = e.Show.Feature,
+                        ShowTime = e.Show.ShowTime
                     }).ToList()
-            };
+                };
+            }
+        }
+        public bool DeleteAttendee(int attId)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity = 
+                ctx.Attendees.Single(e => e.AttId == attId);
+                ctx.Attendees.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
         }
     }
-}
 }
