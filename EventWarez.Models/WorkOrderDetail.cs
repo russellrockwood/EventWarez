@@ -11,7 +11,7 @@ namespace EventWarez.Models
     public class WorkOrderDetail
     {
         public int WorkOrderId { get; set; }
-        public int StaffId { get; set; }
+        public int? StaffId { get; set; }
         public int ShowId { get; set; }
         public Department Department { get; set; }
 

@@ -66,7 +66,7 @@ namespace EventWarez.Services
                     .Select(e => new WorkOrderDetail()
                     {
                         WorkOrderId = e.WorkOrderId,
-                        StaffId = e.StaffId,
+                        StaffId = e.Staff.StaffId,
                         ShowId = e.ShowId,
                         Department = e.Department,
                         CreatedUtc = e.CreatedUtc,
