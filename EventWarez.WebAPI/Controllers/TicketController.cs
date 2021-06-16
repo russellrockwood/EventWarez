@@ -70,6 +70,8 @@ namespace EventWarez.WebAPI.Controllers
         /// </summary>
         /// <param name="attId">Insert an Attendee Id into the uri arguments, and return a list of relevant tickets.</param>
         /// <returns>Attendee associated with Id input.</returns>
+        [HttpGet]
+        [Route("api/GetTicketById")]
         public IHttpActionResult GetTicketsByAttendee(int attId)
         {
             var attendees = _attendeeService.GetTicketByAttendee(attId);
