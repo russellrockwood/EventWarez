@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EventWarez.Models.Show
 {
@@ -14,7 +10,6 @@ namespace EventWarez.Models.Show
 
         public DateTime ShowTime { get; set; }
 
-        ///
         public bool IsSoldOut { get; set; }
     }
 }

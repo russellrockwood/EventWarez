@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EventWarez.Data
 {
@@ -15,9 +10,11 @@ namespace EventWarez.Data
         public int WorkOrderId { get; set; }
         public int? StaffId { get; set; }
         public virtual Staff Staff { get; set; }
+
         [Required]
         public int ShowId { get; set; }
         public virtual Show Show { get; set; }
+
         [Required]
         public Department Department { get; set; }
 

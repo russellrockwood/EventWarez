@@ -1,18 +1,13 @@
 ﻿using EventWarez.Data;
-using EventWarez.Models;
 using EventWarez.Models.Attendee;
 using EventWarez.Models.Ticket;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EventWarez.Services
 {
     public class AttendeeService
     {
-        //Post
         public bool AddAttendee(AttendeeCreate model)
         {
             var entity =
@@ -27,7 +22,6 @@ namespace EventWarez.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        //Get
         public IEnumerable<AttendeeListItem> GetAttendees()
         {
             using (var ctx = new ApplicationDbContext())
@@ -37,13 +31,12 @@ namespace EventWarez.Services
                 return query.ToArray();
             }
         }
-
         public AttendeeDetail GetTicketByAttendee(int attId)
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
-                ctx.Attendees.Single(e => e.AttId == attId);
+                var entity = ctx.Attendees.Single(e => e.AttId == attId);
+
 
                 return new AttendeeDetail
                 {
@@ -64,9 +57,9 @@ namespace EventWarez.Services
         }
         public bool DeleteAttendee(int attId)
         {
-            using(var ctx = new ApplicationDbContext())
+            using (var ctx = new ApplicationDbContext())
             {
-                var entity = 
+                var entity =
                 ctx.Attendees.Single(e => e.AttId == attId);
                 ctx.Attendees.Remove(entity);
                 return ctx.SaveChanges() == 1;

@@ -1,31 +1,16 @@
-﻿using EventWarez.Data;
-using EventWarez.Models;
-using EventWarez.Models.Attendee;
-using EventWarez.Models.Ticket;
+﻿using EventWarez.Models.Attendee;
 using EventWarez.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace EventWarez.WebAPI.Controllers
 {
-    [Authorize]
     /// <summary>
     /// Allows Access to All Attendee-Side Functions
     /// </summary>
+    [Authorize]
     public class AttendeeController : ApiController
     {
-        private TicketService CreateTickService()
-        {
-            var tickService = new TicketService();
-            return tickService;
-        }
-
-        private AttendeeService _attendeeService = new AttendeeService();
-        private TicketService _ticketService = new TicketService();
+        private readonly AttendeeService _attendeeService = new AttendeeService();
         /// <summary>
         /// Create a new Attendee Row
         /// </summary>
@@ -50,24 +35,17 @@ namespace EventWarez.WebAPI.Controllers
             var attendees = _attendeeService.GetAttendees();
             return Ok(attendees);
         }
-        
-
         /// <summary>
-        /// Use to Remove an attendee row from the Database
+        /// Use to Remove an Attendee row from the Database
         /// </summary>
         /// <param name="attId">Takes an Attendee Id as a URI parameter</param>
         /// <returns>Success Message.</returns>
         [Route("api/DeleteAttendee")]
-            public IHttpActionResult DeleteAttendee(int attId)
+        public IHttpActionResult DeleteAttendee(int attId)
         {
             if (!_attendeeService.DeleteAttendee(attId))
-            {
                 return InternalServerError();
-            }
-
             return Ok("Successfully Deleted Attendee!");
         }
-        
     }
-
 }

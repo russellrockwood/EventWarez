@@ -1,12 +1,7 @@
 ﻿using EventWarez.Data;
-using EventWarez.Models;
 using EventWarez.Models.Show;
-using EventWarez.Models.Ticket;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EventWarez.Services
 {
@@ -25,7 +20,6 @@ namespace EventWarez.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-
         public IEnumerable<ShowListItem> GetShows()
         {
             using (var ctx = new ApplicationDbContext())
@@ -45,7 +39,6 @@ namespace EventWarez.Services
                 return query.ToArray();
             }
         }
-
         public ShowDetail GetShowById(int id)
         {
             using (var ctx = new ApplicationDbContext())
@@ -63,7 +56,6 @@ namespace EventWarez.Services
                     };
             }
         }
-
         public bool UpdateShow(ShowEdit model)
         {
             using (var ctx = new ApplicationDbContext())
@@ -79,7 +71,6 @@ namespace EventWarez.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-
         public bool DeleteShow(int showId)
         {
             using (var ctx = new ApplicationDbContext())
