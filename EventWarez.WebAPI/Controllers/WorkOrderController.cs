@@ -1,14 +1,13 @@
 ﻿using EventWarez.Models;
 using EventWarez.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace EventWarez.WebAPI.Controllers
 {
+    /// <summary>
+    /// Allows Access To Functions Regarding the Management of WorkOrder Objects.
+    /// </summary>
+    [Authorize]
     public class WorkOrderController : ApiController
     {
         /// <summary>
@@ -53,7 +52,7 @@ namespace EventWarez.WebAPI.Controllers
             return Ok(service.GetFilledWorkOrders(showId));
         }
         /// <summary>
-        /// Returns a list of work orders associated with a specific show that have not yet been assigned a Staff Member.
+        /// Returns a list of work orders associated with a specific show that HAVE NOT yet been assigned a Staff Member.
         /// </summary>
         /// <param name="showId">Takes in a showID as a URI parameter.</param>
         /// <returns>Appropriate Work Order Rows.</returns>
@@ -64,12 +63,12 @@ namespace EventWarez.WebAPI.Controllers
             var service = new WorkOrderService();
             return Ok(service.GetUnfilledWorkOrders(showId));
         }
-       
         /// <summary>
         /// Allows the user to search for a specific work order.
         /// </summary>
         /// <param name="id">Takes in a Work Order Id as at URI parameter.</param>
         /// <returns>The Appropriate Datarow.</returns>
+        [Route("api/GetWorkOrderById")]
         [HttpGet]
         public IHttpActionResult GetSingleWorkOrder(int id)
         {
@@ -82,6 +81,7 @@ namespace EventWarez.WebAPI.Controllers
         /// </summary>
         /// <param name="workOrderEdit">Takes in the parameters defined in the body, and updates that Work Order Object in the Database.</param>
         /// <returns>Success Message.</returns>
+        [Route("api/UpdateWorkOrder")]
         [HttpPut]
         public IHttpActionResult UpdateWorkOrder(WorkOrderEdit workOrderEdit)
         {
@@ -100,19 +100,17 @@ namespace EventWarez.WebAPI.Controllers
         /// </summary>
         /// <param name="assignmentInfo">Takes in a WorkOrderId and a Staff Id in the body.</param>
         /// <returns>Success Message</returns>
+        [Route("api/Assign")]
         [HttpPut]
         public IHttpActionResult FillWorkOrder(WorkOrderAssign assignmentInfo)
         {
             var service = new WorkOrderService();
 
             if (!service.AddStaffToWorkOrder(assignmentInfo))
-            {
                 return InternalServerError();
-            }
 
             return Ok("Employee added to work order");
         }
-
         /// <summary>
         /// Deletes a Work Order Object.
         /// </summary>

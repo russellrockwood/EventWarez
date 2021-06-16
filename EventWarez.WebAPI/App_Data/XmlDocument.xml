@@ -496,6 +496,11 @@
             <param name="model">Must Enter Password Twice for Confirmation. Information must go BETWEEN the quotes, do not delete them.</param>
             <returns></returns>
         </member>
+        <member name="T:EventWarez.WebAPI.Controllers.AttendeeController">
+            <summary>
+            Allows Access to All Attendee-Side Functions
+            </summary>
+        </member>
         <member name="M:EventWarez.WebAPI.Controllers.AttendeeController.PostAttendee(EventWarez.Models.Attendee.AttendeeCreate)">
             <summary>
             Create a new Attendee Row
@@ -511,7 +516,7 @@
         </member>
         <member name="M:EventWarez.WebAPI.Controllers.AttendeeController.DeleteAttendee(System.Int32)">
             <summary>
-            Use to Remove an attendee row from the Database
+            Use to Remove an Attendee row from the Database
             </summary>
             <param name="attId">Takes an Attendee Id as a URI parameter</param>
             <returns>Success Message.</returns>
@@ -594,7 +599,7 @@
             <param name="id">Takes in a ShowId as a URI parameter, and deletes the object from the database.</param>
             <returns>Success Message.</returns>
         </member>
-        <member name="F:EventWarez.WebAPI.Controllers.TicketController._attendeeService">
+        <member name="T:EventWarez.WebAPI.Controllers.TicketController">
             <summary>
             Allows Access to Functions regarding Tickets.
             </summary>
@@ -629,7 +634,7 @@
         </member>
         <member name="M:EventWarez.WebAPI.Controllers.TicketController.DeleteTicket(System.Int32)">
             <summary>
-            Use to Remove an Ticket row from the Database
+            Use to Remove a Ticket row from the Database
             </summary>
             <param name="tickId">Takes a Ticket Id as a URI parameter</param>
             <returns>Success Message.</returns>
@@ -644,6 +649,11 @@
             Looks up some data by ID.
             </summary>
             <param name="id">The ID of the data.</param>
+        </member>
+        <member name="T:EventWarez.WebAPI.Controllers.WorkOrderController">
+            <summary>
+            Allows Access To Functions Regarding the Management of WorkOrder Objects.
+            </summary>
         </member>
         <member name="M:EventWarez.WebAPI.Controllers.WorkOrderController.PostWorkOrder(EventWarez.Models.WorkOrderCreate)">
             <summary>
@@ -667,7 +677,7 @@
         </member>
         <member name="M:EventWarez.WebAPI.Controllers.WorkOrderController.GetOpenWorkOrders(System.Int32)">
             <summary>
-            Returns a list of work orders associated with a specific show that have not yet been assigned a Staff Member.
+            Returns a list of work orders associated with a specific show that HAVE NOT yet been assigned a Staff Member.
             </summary>
             <param name="showId">Takes in a showID as a URI parameter.</param>
             <returns>Appropriate Work Order Rows.</returns>

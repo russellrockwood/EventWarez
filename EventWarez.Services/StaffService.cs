@@ -1,11 +1,8 @@
 ﻿using EventWarez.Data;
 using EventWarez.Models;
 using EventWarez.Models.Staff;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EventWarez.Services
 {
@@ -16,9 +13,9 @@ namespace EventWarez.Services
             var entity =
               new Staff()
               {
-                 FirstName = model.FirstName,
-                 LastName = model.LastName,
-                 AccessLevel = model.AccessLevel
+                  FirstName = model.FirstName,
+                  LastName = model.LastName,
+                  AccessLevel = model.AccessLevel
               };
             using (var ctx = new ApplicationDbContext())
             {
@@ -26,7 +23,6 @@ namespace EventWarez.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-
         public IEnumerable<StaffDetail> GetStaffDetails()
         {
             using (var ctx = new ApplicationDbContext())
@@ -35,7 +31,7 @@ namespace EventWarez.Services
                     ctx
                         .Staff
                         .Select(
-                            e => new StaffDetail 
+                            e => new StaffDetail
                             {
                                 StaffId = e.StaffId,
                                 FirstName = e.FirstName,
@@ -46,7 +42,6 @@ namespace EventWarez.Services
                 return query.ToArray();
             }
         }
-
         public StaffDetail GetStaffById(int id)
         {
             using (var ctx = new ApplicationDbContext())
@@ -72,12 +67,11 @@ namespace EventWarez.Services
                         CreatedUtc = e.CreatedUtc,
                         ModifiedUtc = e.ModifiedUtc
                     }).ToList()
-                 };
+                };
 
 
             }
         }
-
         public bool UpdateStaff(StaffEdit model)
         {
             using (var ctx = new ApplicationDbContext())
@@ -86,7 +80,7 @@ namespace EventWarez.Services
                     ctx
                         .Staff
                         .Single(e => e.StaffId == model.StaffId);
-                
+
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
                 entity.AccessLevel = model.AccessLevel;
@@ -94,7 +88,6 @@ namespace EventWarez.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-
         public bool DeleteStaff(int staffId)
         {
             using (var ctx = new ApplicationDbContext())

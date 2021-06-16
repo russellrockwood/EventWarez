@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace EventWarez.Models.Ticket
 {
-    //This belongs in the Attendee Services.
     public class TicketDetail
     {
+        [Required]
         public int TicketId { get; set; }
+        [Required]
+        [MaxLength(32, ErrorMessage = "Feature Title must be 32 Chars or less.")]
         public string Feature { get; set; }
         public int? AttId { get; set; }
     }

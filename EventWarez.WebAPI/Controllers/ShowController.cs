@@ -1,9 +1,5 @@
-﻿using EventWarez.Data;
-using EventWarez.Models;
-using EventWarez.Models.Show;
-using EventWarez.Models.Ticket;
+﻿using EventWarez.Models.Show;
 using EventWarez.Services;
-using System.Linq;
 using System.Web.Http;
 
 namespace EventWarez.WebAPI.Controllers
@@ -12,15 +8,14 @@ namespace EventWarez.WebAPI.Controllers
     /// Access to Venue-Side Functionality
     /// </summary>
     [Authorize]
-    
+
     public class ShowController : ApiController
     {
-                private ShowService CreateShowService()
+        private ShowService CreateShowService()
         {
             var showService = new ShowService();
             return showService;
         }
-
         /// <summary>
         /// Allows User to Post a new Show Object to the database
         /// </summary>
@@ -80,7 +75,6 @@ namespace EventWarez.WebAPI.Controllers
 
             return Ok("Show Successfully Updated");
         }
-        
         /// <summary>
         /// Deletes a Show Object from the Show Database
         /// </summary>
@@ -98,7 +92,5 @@ namespace EventWarez.WebAPI.Controllers
                 return Ok("Show Successfully Deleted");
             }
         }
-        
-
     }
 }

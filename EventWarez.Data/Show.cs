@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EventWarez.Data
 {
@@ -22,7 +19,6 @@ namespace EventWarez.Data
 
         public virtual List<Ticket> Tickets { get; set; }
 
-        ///
         public bool IsSoldOut { get; set; }
     }
 }
