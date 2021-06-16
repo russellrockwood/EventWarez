@@ -1,11 +1,8 @@
 ﻿using EventWarez.Data;
 using EventWarez.Models;
-using EventWarez.Models.Show;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EventWarez.Services
 {
@@ -26,7 +23,6 @@ namespace EventWarez.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-
         public IEnumerable<WorkOrderDetail> GetAllWorkOrders()
         {
             using (var ctx = new ApplicationDbContext())
@@ -41,8 +37,6 @@ namespace EventWarez.Services
                                     WorkOrderId = e.WorkOrderId,
                                     StaffId = e.StaffId,
                                     ShowId = e.ShowId,
-                                    StaffId = e.Staff.StaffId,
-                                    ShowId = e.ShowId,  
                                     Department = e.Department,
                                     CreatedUtc = e.CreatedUtc,
                                     ModifiedUtc = e.ModifiedUtc
@@ -51,7 +45,6 @@ namespace EventWarez.Services
                 return query.ToArray();
             }
         }
-
         public WorkOrderDetail GetWorkOrder(int id)
         {
             using (var ctx = new ApplicationDbContext())
@@ -65,7 +58,6 @@ namespace EventWarez.Services
                     {
                         WorkOrderId = entity.WorkOrderId,
                         StaffId = entity.StaffId,
-                        StaffId = entity.Staff.StaffId,
                         ShowId = entity.ShowId,
                         Department = entity.Department,
                         CreatedUtc = entity.CreatedUtc,
@@ -73,7 +65,6 @@ namespace EventWarez.Services
                     };
             }
         }
-
         public bool UpdateWorkOrder(WorkOrderEdit model)
         {
             using (var ctx = new ApplicationDbContext())
@@ -91,7 +82,6 @@ namespace EventWarez.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-
         public bool AddStaffToWorkOrder(WorkOrderAssign model)
         {
             using (var ctx = new ApplicationDbContext())
@@ -106,7 +96,6 @@ namespace EventWarez.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-
         public IEnumerable<WorkOrderDetail> GetFilledWorkOrders(int showId)
         {
             using (var ctx = new ApplicationDbContext())
@@ -137,7 +126,6 @@ namespace EventWarez.Services
                 return filledOrders;
             }
         }
-
         public IEnumerable<WorkOrderDetail> GetUnfilledWorkOrders(int showId)
         {
             using (var ctx = new ApplicationDbContext())
@@ -154,7 +142,7 @@ namespace EventWarez.Services
                     if (workOrder.StaffId == null)
                     {
                         var unfilledOrder = new WorkOrderDetail()
-                        {  
+                        {
                             WorkOrderId = workOrder.WorkOrderId,
                             ShowId = workOrder.ShowId,
                             Department = workOrder.Department,
@@ -167,7 +155,6 @@ namespace EventWarez.Services
                 return unfilledOrders;
             }
         }
-
         public bool DeleteWorkOrder(int workOrderId)
         {
             using (var ctx = new ApplicationDbContext())

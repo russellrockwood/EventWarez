@@ -1,11 +1,8 @@
 ﻿using EventWarez.Data;
 using EventWarez.Models.Show;
 using EventWarez.Models.Ticket;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EventWarez.Services
 {
@@ -35,7 +32,6 @@ namespace EventWarez.Services
                 return query.ToArray();
             }
         }
-
         public bool AddAttendeeToTicket(TicketEdit ticket)
         {
             using (var ctx = new ApplicationDbContext())
@@ -46,9 +42,8 @@ namespace EventWarez.Services
                 entity.AttId = ticket.AttId;
 
                 return ctx.SaveChanges() == 1;
-            } 
+            }
         }
-
         public ShowDetail GetTicketByShow(int showId)
         {
             using (var ctx = new ApplicationDbContext())
@@ -85,7 +80,5 @@ namespace EventWarez.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-
-
     }
 }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace EventWarez.Data
 {
@@ -20,6 +14,7 @@ namespace EventWarez.Data
         public int Price { get; set; }
 
         public enum TicketType { General, VIP }
+
         [Required]
         public TicketType TypeOfTicket { get; set; }
     }

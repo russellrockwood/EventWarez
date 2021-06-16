@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 using static EventWarez.Data.Ticket;
 
 namespace EventWarez.Models.Ticket
-    //This Belongs in the Show Services
 {
     public class TicketCreate
     {
+        [Required]
         public int Price { get; set; }
+        [Required]
         public TicketType TypeOfTicket { get; set; }
+        [Required]
         public int ShowId { get; set; }
     }
 }

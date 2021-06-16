@@ -18,16 +18,12 @@ namespace EventWarez.WebAPI.Controllers
         public IHttpActionResult Post(StaffCreate staff)
         {
             if (!ModelState.IsValid)
-            {
                 return BadRequest(ModelState);
-            }
 
             var staffService = new StaffService();
 
             if (!staffService.CreateStaff(staff))
-            {
                 return InternalServerError();
-            }
 
             return Ok("Staffmember Created");
         }
@@ -81,6 +77,5 @@ namespace EventWarez.WebAPI.Controllers
 
             return Ok("Staff Deleted");
         }
-
     }
 }
