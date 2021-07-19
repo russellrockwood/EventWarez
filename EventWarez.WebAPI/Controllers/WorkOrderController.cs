@@ -9,6 +9,7 @@ using System.Web.Http;
 
 namespace EventWarez.WebAPI.Controllers
 {
+    [Authorize]
     public class WorkOrderController : ApiController
     {
         /// <summary>
@@ -43,7 +44,7 @@ namespace EventWarez.WebAPI.Controllers
         /// <summary>
         /// Returns a list of Work Orders that have been assigned to staff members for a particular show.
         /// </summary>
-        /// <param name="showid">Takes in a showID as a URI Parameter, and Returns That Object.</param>
+        /// <param name="showId">Takes in a showID as a URI Parameter, and Returns That Object.</param>
         /// <returns>Returns Work Order Associated with Id input.</returns>
         [HttpGet]
         [Route("api/WorkOrder/GetFilled")]
@@ -82,6 +83,7 @@ namespace EventWarez.WebAPI.Controllers
         /// <param name="workOrderEdit">Takes in the parameters defined in the body, and updates that Work Order Object in the Database.</param>
         /// <returns>Success Message.</returns>
         [HttpPut]
+        [Route("api/WorkOrder/Update")]
         public IHttpActionResult UpdateWorkOrder(WorkOrderEdit workOrderEdit)
         {
             if (!ModelState.IsValid)
@@ -100,6 +102,7 @@ namespace EventWarez.WebAPI.Controllers
         /// <param name="assignmentInfo">Takes in a WorkOrderId and a Staff Id in the body.</param>
         /// <returns>Success Message</returns>
         [HttpPut]
+        [Route("api/WorkOrder/Fill")]
         public IHttpActionResult FillWorkOrder(WorkOrderAssign assignmentInfo)
         {
             var service = new WorkOrderService();

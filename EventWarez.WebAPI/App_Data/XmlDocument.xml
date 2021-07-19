@@ -662,7 +662,7 @@
             <summary>
             Returns a list of Work Orders that have been assigned to staff members for a particular show.
             </summary>
-            <param name="showid">Takes in a showID as a URI Parameter, and Returns That Object.</param>
+            <param name="showId">Takes in a showID as a URI Parameter, and Returns That Object.</param>
             <returns>Returns Work Order Associated with Id input.</returns>
         </member>
         <member name="M:EventWarez.WebAPI.Controllers.WorkOrderController.GetOpenWorkOrders(System.Int32)">

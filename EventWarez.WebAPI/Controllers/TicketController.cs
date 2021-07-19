@@ -4,6 +4,7 @@ using System.Web.Http;
 
 namespace EventWarez.WebAPI.Controllers
 {
+    [Authorize]
     public class TicketController : ApiController
     {
         /// <summary>
@@ -43,6 +44,7 @@ namespace EventWarez.WebAPI.Controllers
         /// <returns>All tickets associated with Show Id input..</returns>
 
         [HttpGet]
+        [Route("api/Ticket/showId")]
         public IHttpActionResult GetTicketsByShow(int showId)
         {
 
@@ -76,6 +78,8 @@ namespace EventWarez.WebAPI.Controllers
         /// </summary>
         /// <param name="attId">Insert an Attendee Id into the uri arguments, and return a list of relevant tickets.</param>
         /// <returns>Attendee associated with Id input.</returns>
+        [HttpGet]
+        [Route("api/Ticket/attId")]
         public IHttpActionResult GetTicketsByAttendee(int attId)
         {
 

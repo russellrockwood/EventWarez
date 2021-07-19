@@ -113,7 +113,7 @@ namespace DibzNote.WebAPI
                     // hold additional metadata for an API. Version and title are required but you can also provide
                     // additional fields by chaining methods off SingleApiVersion.
                     //
-                    c.SingleApiVersion("v1", "DibzNote.WebAPI");
+                    c.SingleApiVersion("v1", "EventWarez Management Software");
 
                     //Enable adding the Authorization header to [Authorize]d endpoints.
                     c.OperationFilter(() => new AddAuthorizationHeaderParameterOperationFilter());
